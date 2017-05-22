@@ -1,0 +1,6 @@
+.idea/
+/api/*.pyc
+/archistyl/*.pyc
+/db.sqlite3
+assets/app/build.js
+node_modules/
