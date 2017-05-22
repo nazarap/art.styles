@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from PIL import Image
 
 
 class Type(models.Model):
@@ -13,7 +14,6 @@ class Subtype(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
-    styles = models.ManyToManyField(Style)
 
 
 class Style(models.Model):

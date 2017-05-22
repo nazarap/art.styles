@@ -8,25 +8,25 @@ class TypeSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'description')
 
 
-class SubtypeSerializer(serializers.HyperlinkedModelSerializer):
+class SubtypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subtype
-        fields = ('id', 'name', 'description', 'type', 'styles')
+        fields = ('id', 'name', 'description', 'type')
 
 
-class StyleSerializer(serializers.HyperlinkedModelSerializer):
+class StyleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Style
         fields = ('name', 'description', 'subtypes')
 
 
-class SubtypeImageSerializer(serializers.HyperlinkedModelSerializer):
+class SubtypeImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubtypeImage
         fields = ('id', 'image', 'subtype')
 
 
-class StyleImageSerializer(serializers.HyperlinkedModelSerializer):
+class StyleImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = StyleImage
         fields = ('id', 'image', 'style')

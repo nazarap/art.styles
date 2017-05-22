@@ -64,19 +64,9 @@ $ pip install --upgrade pip
 $ pip install django-cors-headers
 $ pip install djangorestframework
 $ pip install flask
+$ pip install Pillow
 ```
-```sh
-$ pip install vk
-```
-if your have error:
-    "DEPRECATION: Uninstalling a distutils installed project (requests) has been deprecated and will be removed 
-    in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall 
-    the project."
-    
-Run this command
-```sh
-$ pip install --ignore-installed vk
-```    
+
 Run server
 ```sh
 $ python manage.py runserver
