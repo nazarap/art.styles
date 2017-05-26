@@ -1,0 +1,299 @@
+html, body {
+    margin: 0;
+    background: #edeef0;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, ul {
+    font-family: 'Roboto', sans-serif;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 1em 0;
+    padding: 0;
+    border-top: 1px solid #507299;
+    width: 70%;
+    margin-left: 15%;
+}
+
+body > header {
+    /*margin-bottom: 5px;*/
+}
+
+body > header > nav {
+    padding: 20px 300px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    background: #507299;
+    margin-bottom: 5px;
+}
+
+body > header > nav > a {
+    font-size: 25px;
+    font-weight: 900;
+    color: white;
+}
+
+body > header > nav > div {
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+}
+
+body > header > nav > div > a {
+    color: #507299;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 22px 10px;
+    font-weight: 500;
+    color: white;
+}
+
+body > header > nav > div > a.active {
+    border-bottom: 3px solid white;
+}
+
+body > header > div > .background {
+    /*background-image: url(http://vector30.com/wp-content/uploads/2016/12/баннер2.jpg);
+    height: 400px;
+    padding: 20px 300px;*/
+    background-image: url(https://pp.userapi.com/c638623/v638623697/1ee16/dSLUURXDnI4.jpg);
+    height: 400px;
+    padding: 20px 300px;
+    background-position: 30% 68%;
+}
+
+body > header > div > .background > h1 {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.search-content {
+    margin-top: 20px;
+    padding: 20px 300px 50px 300px;
+    background: white;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.search-content h1 {
+    color: #507299;
+}
+
+.search-content .one-filter {
+    display: inline-block;
+    margin: 15px 15px;
+    background: white;
+    width: 200px;
+    height: 250px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.search-content .one-filter > img {
+    width: 100%;
+    height: 150px;
+}
+
+.search-content .one-filter > h4 {
+    margin: 3px 9px;
+    color: #707070;
+    height: 57px;
+}
+
+.search-content .one-filter > div {
+    display: inline-block;
+    float: right;
+    margin-right: 3px;
+}
+
+.search-content .one-filter > div > button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    color: #707070;
+}
+
+.search-content > .search-btn {
+    margin-bottom: 25px;
+}
+
+.search-content > .search-btn > button {
+    color: #707070;
+    border: 1px solid #507299;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search-content > .search-btn > button:active {
+    padding-left: 22px;
+}
+
+.search-content .style-one {
+    margin: 50px 15px;
+}
+
+.search-content .style-one > h2 {
+    color: #707070;
+    cursor: pointer;
+}
+
+.search-content .style-one > h2:hover {
+    color: #5c5c5c;
+}
+
+.search-content .style-one .left-div {
+    width: 25%;
+    display: inline-block;
+}
+
+.search-content .style-one .left-div > img {
+    width: 250px;
+}
+
+.search-content .style-one .des-div {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-content .style-one .des-div > p {
+    margin: 0;
+    color: #707070;
+}
+
+.search-content .style-one .right-div {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-content .style-one .right-div > ul {
+    margin: 0;
+    color: #707070;
+    list-style-type: none;
+    font-size: 17px;
+    border-left: 4px solid #507299;
+    padding-left: 15px;
+    margin-left: 13px;
+}
+
+.search-content .style-one .right-div > ul > li {
+    margin: 3px 0;
+    padding: 6px 3px;
+    color: #507299;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+}
+
+
+
+/*Settings popup styles*/
+
+.popup-background {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(26,26,26,.7);
+    z-index: 1040;
+}
+
+.setting-popup {
+    width: 70%;
+    position: absolute;
+    background: white;
+    z-index: 1050;
+    left: 15%;
+    top: 5%;
+    height: 80%;
+    padding-bottom: 90px;
+}
+
+.setting-popup .popup-header {
+    background: #507299;
+    padding: 20px 50px;
+}
+
+.setting-popup .popup-header > h2 {
+    display: inline-block;
+    margin: 0;
+    color: white;
+}
+
+.setting-popup .popup-header > h2.feature {
+    width: calc(50% - 25% /2);
+}
+
+.setting-popup .popup-header > h3 {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    color: white;
+}
+
+.setting-popup .popup-header > .add-all-btn {
+    margin: 0 15px;
+    color: white;
+    background: inherit;
+    border: none;
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.setting-popup .popup-header > input {
+    border-radius: 0;
+    border: none;
+    height: 28px;
+    width: 25%;
+    padding: 0 10px;
+    color: #707070;
+}
+
+.setting-popup .popup-header > button.search-btn {
+    border-radius: 0;
+    border: none;
+    background: inherit;
+    cursor: pointer;
+    color: white;
+    font-size: 19px;
+}
+
+.setting-popup .popup-header .close-popup {
+    color: white;
+    font-size: 20px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+    float: right;
+}
+
+.setting-popup .popup-header .close-popup > i {
+    margin-top: 5px;
+}
+
+.one-filter button.is-check {
+    color: green !important;
+    cursor: inherit !important;
+}
+
+.setting-popup .popup-content {
+    text-align: center;
+    height: calc(100% + 22px);
+    overflow: auto;
+}
