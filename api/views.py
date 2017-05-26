@@ -9,6 +9,7 @@ from rest_framework.request import Request
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 
 
 class TypeViewSet(viewsets.ModelViewSet):
@@ -56,8 +57,8 @@ class StyleViewSet(viewsets.ModelViewSet):
     serializer_class = StyleSerializer
     renderer_classes = (JSONRenderer,)
 
-    # Get Subtypes list by Type token
-    def get_style_by_subtypes(self, request):
+    # Get Styles by subtypes list
+    def get_styles_by_subtypes(self, request):
         style_ids = {}
         style_list = list()
 
@@ -80,6 +81,63 @@ class StyleViewSet(viewsets.ModelViewSet):
         styles = Style.objects.filter(id__in=style_list)
         serializer = StyleSerializer(styles, many=True, context=serializer_context)
         return Response({"styles": serializer.data})
+
+    # Get Styles by name
+    def find_styles_by_name(self, request):
+        # Get params from request
+        request_data = json.loads(request.body)
+        search_key = request_data.get('search_key')
+        try:
+
+            styles = Style.objects.all()
+
+            for term in search_key.split(' '):
+                styles = styles.filter(Q(name__istartswith=term) | Q(name__endswith=term))
+
+            serializer_context = {
+                'request': Request(request),
+            }
+            serializer = StyleSerializer(styles, many=True, context=serializer_context)
+
+            # Return Styles data
+            return Response({'styles': serializer.data})
+
+        except ObjectDoesNotExist:
+            return Response({"styles": []}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Get all Styles
+    def get_all_styles(self, request):
+
+        try:
+            styles = Style.objects.all()
+
+            serializer_context = {
+                'request': Request(request),
+            }
+            serializer = StyleSerializer(styles, many=True, context=serializer_context)
+
+            # Return Styles data
+            return Response({'styles': serializer.data})
+
+        except ObjectDoesNotExist:
+            return Response({"styles": []}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Get all Styles
+    def get_style_by_id(self, request, style_id):
+
+        try:
+            style = Style.objects.get(id=style_id)
+
+            serializer_context = {
+                'request': Request(request),
+            }
+            serializer = StyleSerializer([style], many=True, context=serializer_context)
+
+            # Return Styles data
+            return Response({'style': serializer.data[0]})
+
+        except ObjectDoesNotExist:
+            return Response({"style": {}}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class SubtypeImageViewSet(viewsets.ModelViewSet):

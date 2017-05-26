@@ -21,5 +21,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^api/', include('api.urls')),
+    url(r'^api/$', TemplateView.as_view(template_name='api.index.html')),
+    url(r'^api$', TemplateView.as_view(template_name='api.index.html')),
     url(r'^', TemplateView.as_view(template_name='index.html'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
