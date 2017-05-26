@@ -61,7 +61,10 @@ class StyleViewSet(viewsets.ModelViewSet):
         style_ids = {}
         style_list = list()
 
-        subtypes_list = request.POST.getlist('subtypes_list')
+        # subtypes_list = request.POST['subtypes_list']
+        request_data = json.loads(request.body)
+        subtypes_list = request_data.get('subtypes_list')
+        print subtypes_list
         for style in Style.objects.filter(subtypes__id__in=subtypes_list):
             if style.id not in style_ids:
                 style_ids[style.id] = 0
