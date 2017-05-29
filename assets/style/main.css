@@ -297,3 +297,19 @@ footer {
     height: calc(100% + 22px);
     overflow: auto;
 }
+
+
+@media (max-width: 1400px) {
+
+    body > header > nav {
+        padding: 20px 100px;
+    }
+
+    body > header > nav > div > a {
+        padding: 24px 10px;
+    }
+
+    .search-content {
+        padding: 20px 100px 50px 100px;
+    }
+}

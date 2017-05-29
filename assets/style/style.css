@@ -1,0 +1,49 @@
+/* YOUR CUSTOM STYLES */
+
+    .navbar {
+        background-color: #507299;
+        font-weight: 400;
+        padding: 15px 0;
+        box-shadow: none;
+    }
+/*
+        nav-item a {
+        color: black;
+    }
+*/
+    footer.page-footer a {
+        color: #323232;
+    }
+
+    footer.page-footer {
+        background-color: #dfe9f0;
+        margin-top: 2rem;
+        color: black;
+    }
+
+    .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .open > .nav-link {
+        color: white;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 25px;
+        color: white;
+    }
+
+    .navbar .navbar-brand:hover {
+        color: white;
+    }
+
+/*
+.navbar.navbar-dark .navbar-brand, .navbar.navbar-dark .navbar-brand:hover {
+    color: #4c4c4c;
+}
+
+.navbar.navbar-dark .breadcrumb a, .navbar.navbar-dark .navbar-nav .nav-item a {
+    color: #4c4c4c;
+}
+
+.navbar.navbar-dark .breadcrumb a, .navbar.navbar-dark .navbar-nav .nav-item a:hover {
+    color: #4c4c4c;
+}
+*/
