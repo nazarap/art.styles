@@ -34,6 +34,20 @@
         color: white;
     }
 
+    .mr-auto {
+        margin-left: auto;
+        margin-right: 0 !important;
+    }
+
+    .read-more.btn-many a {
+        padding-left: 0;
+        padding-right: 0;
+        width: 45px;
+    }
+
+    .read-more.btn-many i {
+        font-size: 15px;
+    }
 /*
 .navbar.navbar-dark .navbar-brand, .navbar.navbar-dark .navbar-brand:hover {
     color: #4c4c4c;
@@ -47,3 +61,104 @@
     color: #4c4c4c;
 }
 */
+
+
+/*Settings popup styles*/
+
+.popup-background {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(26,26,26,.7);
+    z-index: 1040;
+}
+
+.setting-popup {
+    width: 70%;
+    position: absolute;
+    background: white;
+    z-index: 1050;
+    left: 15%;
+    top: 5%;
+    height: 80%;
+    padding-bottom: 90px;
+}
+
+.setting-popup .popup-header {
+    background: #507299;
+    padding: 20px 50px;
+}
+
+.setting-popup .popup-header > h2 {
+    display: inline-block;
+    margin: 0;
+    color: white;
+}
+
+.setting-popup .popup-header > h2.feature {
+    width: calc(50% - 25% /2);
+}
+
+.setting-popup .popup-header > h3 {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    color: white;
+}
+
+.setting-popup .popup-header > .add-all-btn {
+    margin: 0 15px;
+    color: white;
+    background: inherit;
+    border: none;
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.setting-popup .popup-header > input {
+    border-radius: 0;
+    border: none;
+    height: 28px;
+    width: 25%;
+    padding: 0 10px;
+    color: white;
+    background: inherit;
+    border-bottom: 2px solid white;
+}
+
+.setting-popup .popup-header > button.search-btn {
+    border-radius: 0;
+    border: none;
+    background: inherit;
+    cursor: pointer;
+    color: white;
+    font-size: 19px;
+}
+
+.setting-popup .popup-header .close-popup > i {
+    margin-top: 5px;
+}
+
+.one-filter button.is-check {
+    color: green !important;
+    cursor: inherit !important;
+}
+
+.setting-popup .popup-content {
+    height: calc(100% + 22px);
+    overflow: auto;
+    padding: 25px;
+}
+
+.setting-popup .btn {
+    padding: 10px 20px;
+    background: #688cb6 !important;
+    color: #fff !important;
+}
+
+.btn-times {
+    float: right;
+}
