@@ -43,15 +43,15 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+)
 
 ROOT_URLCONF = 'archistyl.urls'
 
@@ -89,6 +89,7 @@ ALLOWED_HOSTS = []
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:63342',
+    'localhost:4200',
 )
 
 # Password validation

@@ -24,7 +24,7 @@ class TypeViewSet(viewsets.ModelViewSet):
             }
             serializer = TypeSerializer(Type.objects.all(), many=True, context=serializer_context)
             for type in serializer.data:
-                type['images'] = list(SubtypeImage.objects.filter(subtype__in=Subtype.objects.filter(type_id=type["id"])).values_list('image'))
+                type['images'] = list(SubtypeImage.objects.filter(subtype__in=Subtype.objects.filter(type_id=type["id"])).values_list('image', flat=True))
             return Response({'types': serializer.data})
 
         except ObjectDoesNotExist:
@@ -44,7 +44,7 @@ class SubtypeViewSet(viewsets.ModelViewSet):
             }
             serializer = SubtypeSerializer(Subtype.objects.filter(type_id=type_id), many=True, context=serializer_context)
             for subtype in serializer.data:
-                subtype['images'] = list(SubtypeImage.objects.filter(subtype_id=subtype['id']).values_list('image'))
+                subtype['images'] = list(SubtypeImage.objects.filter(subtype_id=subtype['id']).values_list('image', flat=True))
 
             return Response({'subtypes': serializer.data})
 
@@ -107,7 +107,6 @@ class StyleViewSet(viewsets.ModelViewSet):
 
     # Get all Styles
     def get_all_styles(self, request):
-
         try:
             styles = Style.objects.all()
 
@@ -115,6 +114,9 @@ class StyleViewSet(viewsets.ModelViewSet):
                 'request': Request(request),
             }
             serializer = StyleSerializer(styles, many=True, context=serializer_context)
+
+            for style in serializer.data:
+                style['images'] = StyleImage.objects.filter(style_id=style['id']).values_list('image', flat=True)
 
             # Return Styles data
             return Response({'styles': serializer.data})
