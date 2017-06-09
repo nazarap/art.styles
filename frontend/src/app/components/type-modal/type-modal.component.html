@@ -1,0 +1,92 @@
+<div>
+    <div class="popup-background"></div>
+    <div class="setting-popup">
+        <div class="popup-header">
+            <h2 class="feature">Select feature</h2>
+
+            <input>
+            <a class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></a>
+
+            <a class="btn btn-info btn-times"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+        <div class="popup-content">
+                <h1>{{ typeList }}</h1>
+
+            <div class="col-lg-3" *ngFor="let type of typeList">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="{{ type.images[0] }}" class="img-fluid" alt="{{ type.name }}">
+                        <a href="#!">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">{{ type.name }}</h4>
+                        <!--Text-->
+                        <div class="read-more btn-many">
+                            <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                            <a class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+        </div>
+
+
+        <div style="display: none">
+            <div class="popup-background" style="background: rgba(26, 26, 26, 0.39);"></div>
+            <div class="setting-popup" style="height: auto;">
+                <div class="popup-header">
+                    <h2>Select feature`s type</h2>
+                    <h3>or</h3>
+
+                    <a class="btn btn-info" style='margin-top: -6px; margin-left: 20px;font-size: 14px;font-weight: 900;padding-bottom: 9px;'>
+                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 5px;"></i> Add all</a>
+
+                    <a class="btn btn-info btn-times" style="margin-top: 0px;"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+                <div class="popup-content">
+                    <div class="col-lg-4">
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(11).jpg" class="img-fluid" alt="">
+                                <a href="#!">
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <h4 class="card-title">Card title</h4>
+                                <!--Text-->
+                                <div class="read-more btn-many">
+                                    <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                                    <a class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
