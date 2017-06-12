@@ -1,0 +1,57 @@
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Search results by your features
+            <small class="text-muted"></small>
+        </h1>
+        <p style="color: #707070;">Please select the main features of the style that you are looking for. Use the "Add Feature" button
+            for finding and adding features styilyu search. Use the "Search" button to launch style search.</p>
+    </div>
+</div>
+<!--/.Page heading-->
+<hr>
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <!--First column-->
+    <div class="col-lg-3 wow fadeIn" *ngFor="let subtype of getSelectedList()">
+        <!--Card-->
+        <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+                <img src="{{ subtype.images[0] }}" class="img-fluid" alt="{{ subtype.name }}">
+                <a href="#!">
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">{{ subtype.name }}</h4>
+                <!--Text-->
+                <div class="read-more btn-many">
+                    <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" (click)="removeSelectedSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <!--/.Card content-->
+
+        </div>
+        <!--/.Card-->
+    </div>
+    <h1 class="empty-list" *ngIf="!getSelectedList().length">Style`s feature list</h1>
+    <!--/.First column-->
+</div>
+<!--/.First row-->
+
+<a class="btn btn-info" (click)="openPopup()">Add Feature</a>
+
+<type-modal></type-modal>
+
+<a class="btn btn-info" (click)="search()">Search</a>
+
+<br><br><br>
