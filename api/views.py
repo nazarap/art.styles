@@ -65,7 +65,6 @@ class StyleViewSet(viewsets.ModelViewSet):
         # subtypes_list = request.POST['subtypes_list']
         request_data = json.loads(request.body)
         subtypes_list = request_data.get('subtypes_list')
-        print subtypes_list
         for style in Style.objects.filter(subtypes__id__in=subtypes_list):
             if style.id not in style_ids:
                 style_ids[style.id] = 0
@@ -80,6 +79,10 @@ class StyleViewSet(viewsets.ModelViewSet):
         }
         styles = Style.objects.filter(id__in=style_list)
         serializer = StyleSerializer(styles, many=True, context=serializer_context)
+
+        for style in serializer.data:
+            style['images'] = StyleImage.objects.filter(style_id=style['id']).values_list('image', flat=True)
+
         return Response({"styles": serializer.data})
 
     # Get Styles by name
