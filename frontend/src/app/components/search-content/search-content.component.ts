@@ -6,7 +6,6 @@ import { StyleService } from './../../services/style.service'
   template: `<div class="container">
                 <search-block></search-block>
                 <list-block></list-block>
-                <type-modal></type-modal>
             </div>`,
   styleUrls: ['./search-content.component.css'],
   providers: [StyleService]

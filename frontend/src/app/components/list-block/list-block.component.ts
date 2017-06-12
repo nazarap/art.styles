@@ -8,15 +8,12 @@ import { StyleService } from './../../services/style.service'
   styleUrls: ['./list-block.component.css']
 })
 export class ListBlockComponent implements OnInit {
-  styleList: Array<Style>;
 
   constructor(private styleService: StyleService) {}
 
-  ngOnInit(): void {
-      this.styleService.getStyles().subscribe(
-          data => {data.styles = this.styleList = data.styles as Style[]},
-          error => {alert(error)},
-          () => console.log(this.styleList)
-      )
+  ngOnInit(): void {}
+
+  getSearchStyleList(): Array<Style> {
+      return this.styleService.getSearchStyleList();
   }
 }

@@ -1,18 +1,17 @@
-<div>
+<div *ngIf="isOpen()">
     <div class="popup-background"></div>
     <div class="setting-popup">
         <div class="popup-header">
             <h2 class="feature">Select feature</h2>
 
-            <input>
-            <a class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <!--<input>-->
+            <!--<a class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></a>-->
 
-            <a class="btn btn-info btn-times"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <a class="btn btn-info btn-times" (click)="closePopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
         </div>
-        <div class="popup-content">
-                <h1>{{ typeList }}</h1>
+        <div class="popup-content row">
 
-            <div class="col-lg-3" *ngFor="let type of typeList">
+            <div class="col-lg-3 one-card" *ngFor="let type of typeList">
                 <!--Card-->
                 <div class="card">
 
@@ -32,7 +31,7 @@
                         <!--Text-->
                         <div class="read-more btn-many">
                             <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
-                            <a class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <a class="btn btn-info" (click)="subPopup(type.id)"><i class="fa fa-plus" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <!--/.Card content-->
@@ -43,26 +42,26 @@
         </div>
 
 
-        <div style="display: none">
+        <div *ngIf="isOpenSubPopup">
             <div class="popup-background" style="background: rgba(26, 26, 26, 0.39);"></div>
-            <div class="setting-popup" style="height: auto;">
+            <div class="setting-popup" style="position: absolute">
                 <div class="popup-header">
                     <h2>Select feature`s type</h2>
-                    <h3>or</h3>
+                    <!--<h3>or</h3>-->
 
-                    <a class="btn btn-info" style='margin-top: -6px; margin-left: 20px;font-size: 14px;font-weight: 900;padding-bottom: 9px;'>
-                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 5px;"></i> Add all</a>
+                    <!--<a class="btn btn-info" style='margin-top: -6px; margin-left: 20px;font-size: 14px;font-weight: 900;padding-bottom: 9px;'>-->
+                        <!--<i class="fa fa-plus" aria-hidden="true" style="margin-right: 5px;"></i> Add all</a>-->
 
-                    <a class="btn btn-info btn-times" style="margin-top: 0px;"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    <a class="btn btn-info btn-times" style="margin-top: 0px;" (click)="subPopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
-                <div class="popup-content">
-                    <div class="col-lg-4">
+                <div class="popup-content row">
+                    <div class="col-lg-4 one-card" *ngFor="let subtype of subtypeList">
                         <!--Card-->
                         <div class="card">
 
                             <!--Card image-->
                             <div class="view overlay hm-white-slight">
-                                <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(11).jpg" class="img-fluid" alt="">
+                                <img src="{{ subtype.images[0] }}" class="img-fluid" alt="{{ subtype.name }}">
                                 <a href="#!">
                                     <div class="mask"></div>
                                 </a>
@@ -72,11 +71,12 @@
                             <!--Card content-->
                             <div class="card-block">
                                 <!--Title-->
-                                <h4 class="card-title">Card title</h4>
+                                <h4 class="card-title">{{ subtype.name }}</h4>
                                 <!--Text-->
                                 <div class="read-more btn-many">
                                     <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
-                                    <a class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <a *ngIf="!getSelectedList()[subtype.id]" class="btn btn-info" (click)="addSubtype(subtype)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <a *ngIf="getSelectedList()[subtype.id]" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             <!--/.Card content-->

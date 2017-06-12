@@ -1,3 +1,7 @@
 .card {
     margin-bottom: 2rem;
 }
+.empty-list {
+    color: #bfbfbf;
+    margin: 100px auto 100px auto;
+}

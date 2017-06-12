@@ -6553,6 +6553,8 @@ footer.page-footer {
 }
 
 .read-more.btn-many a {
+    box-shadow: none !important;
+    background-color: #bfbfbf !important;
     padding-left: 0;
     padding-right: 0;
     width: 45px;

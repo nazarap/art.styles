@@ -8,6 +8,7 @@ import { Http, Response, Headers } from '@angular/http';
 export class StyleService {
     private headers: Headers;
     private numberC: number = 0;
+    private searchStyleList: Array<Style> = null;
 
     constructor(private http: Http) {
         this.headers = new Headers();
@@ -18,5 +19,20 @@ export class StyleService {
         return this.http
                .get(`http://localhost:8000/api/styles/`, { headers: this.headers })
                .map(res => res.json());
+    }
+
+    search(subtypesList): any {
+        this.http
+           .post(`http://localhost:8000/api/styles/filter/`, {subtypes_list: subtypesList}, { headers: this.headers })
+           .map(res => res.json())
+           .subscribe(
+               data => {this.searchStyleList = data.styles as Style[]},
+               error => {},
+               () => {}
+           )
+    }
+
+    getSearchStyleList(): Array<Style> {
+        return this.searchStyleList;
     }
 }

@@ -6,6 +6,7 @@ import { Http, Response, Headers } from '@angular/http';
 @Injectable()
 export class TypeService {
     private headers: Headers;
+    private isOpenPopup = false;
 
     constructor(private http: Http) {
         this.headers = new Headers();
@@ -16,5 +17,13 @@ export class TypeService {
         return this.http
                .get(`http://localhost:8000/api/types/`, { headers: this.headers })
                .map(res => res.json());
+    }
+
+    getTypePopup(): boolean {
+        return this.isOpenPopup;
+    }
+
+    setTypePopup(): void {
+        this.isOpenPopup = !this.isOpenPopup;
     }
 }
