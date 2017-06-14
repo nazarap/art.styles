@@ -9,6 +9,11 @@ import { SearchContentComponent } from './components/search-content/search-conte
 import { SearchBlockComponent } from './components/search-block/search-block.component';
 import { ListBlockComponent } from './components/list-block/list-block.component';
 import { TypeModalComponent } from './components/type-modal/type-modal.component';
+import { AdminContentComponent } from './components/admin-content/admin-content.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminStyleComponent } from './components/admin-style/admin-style.component';
+
+import { routing, appRoutingProviders } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -17,14 +22,20 @@ import { TypeModalComponent } from './components/type-modal/type-modal.component
     SearchContentComponent,
     SearchBlockComponent,
     ListBlockComponent,
-    TypeModalComponent
+    TypeModalComponent,
+    AdminContentComponent,
+    AdminLoginComponent,
+    AdminStyleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

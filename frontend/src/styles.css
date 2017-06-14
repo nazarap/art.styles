@@ -1996,8 +1996,9 @@
 .navbar,
 .dropdown-menu,
 .badge,
-.chip, .pagination .active .page-link, .btn, .pager li a {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+.chip, .pagination .active .page-link, .pager li a {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
 
 .z-depth-1-half, .media .media-left img, .tooltip .tooltip-inner, .section img,
 .section .view, .btn:hover, .btn:active, .btn:focus, .btn.active, .btn-secondary.active, .btn-secondary.dropdown-toggle, .btn-primary.active, .btn-default.active, .btn-success.active, .btn-info.active, .btn-warning.active, .btn-danger.active, .pager li a:hover, .btn-elegant.active, .btn-unique.active, .btn-pink.active, .btn-purple.active, .btn-deep-purple.active, .btn-indigo.active, .btn-cyan.active, .btn-light-green.active, .btn-dark-green.active, .btn-lime.active, .btn-yellow.active, .btn-amber.active, .btn-orange.active, .btn-deep-orange.active, .btn-brown.active, .btn-blue-grey.active, .btn-mdb.active, .card .form-header, ul.instagram-photos li img {
@@ -6440,11 +6441,11 @@ footer.page-footer {
     overflow: hidden;
     height: 50px;
     line-height: 50px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(0, 0, 0, 0.2);
+    color: #707070;
+    background-color: rgba(0, 0, 0, 0);
     text-align: center; }
   footer.page-footer a {
-    color: #fff; }
+    color: #507299; }
   footer.page-footer .title {
     text-transform: uppercase; }
   footer.page-footer .call-to-action {
@@ -6541,7 +6542,7 @@ footer.page-footer a {
 }
 
 footer.page-footer {
-    background-color: #dfe9f0;
+    background-color: #FFF;
     margin-top: 2rem;
     color: black;
 }

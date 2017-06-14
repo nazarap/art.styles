@@ -1,0 +1,23 @@
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Login
+            <small class="text-muted"></small>
+        </h1>
+        <p style="color: #707070;">This page is for administrators of the site. You need to log in for the ability to edit the information on the site.</p>
+    </div>
+</div>
+<!--/.Page heading-->
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="login-block">
+
+        <input placeholder="Login" [(ngModel)]="login">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+
+        <button (click)="loginListener()">Login</button>
+
+    </div>
+</div>
+<!--/.First row-->
