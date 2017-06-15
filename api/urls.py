@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^styles/search/$', local_views.StyleViewSet.as_view({'post': 'find_styles_by_name'})),
     url(r'^styles/$', local_views.StyleViewSet.as_view({'get': 'get_all_styles'})),
     url(r'^style/(?P<style_id>[0-9]+)/$', local_views.StyleViewSet.as_view({'get': 'get_style_by_id'})),
+    url(r'^style/create/$', local_views.StyleViewSet.as_view({'post': 'create_new_style'})),
 ]

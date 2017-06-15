@@ -10,7 +10,9 @@ from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
-
+import base64
+from django.core.files.base import ContentFile
+import uuid
 
 class TypeViewSet(viewsets.ModelViewSet):
     queryset = Type.objects.all()
@@ -136,6 +138,37 @@ class StyleViewSet(viewsets.ModelViewSet):
             serializer_context = {
                 'request': Request(request),
             }
+            serializer = StyleSerializer([style], many=True, context=serializer_context)
+
+            # Return Styles data
+            return Response({'style': serializer.data[0]})
+
+        except ObjectDoesNotExist:
+            return Response({"style": {}}, status=status.HTTP_400_BAD_REQUEST)
+
+
+    # Get all Styles
+    def create_new_style(self, request):
+        # Get params from request
+        request_data = json.loads(request.body)
+        subtypes_list = request_data.get('subtypes_list')
+        images_list = request_data.get('images_list')
+
+        try:
+            serializer_context = {
+                'request': Request(request),
+            }
+            style = Style.objects.create(name=request_data.get('name'), description=request_data.get('description'))
+            print style
+            style.subtypes = subtypes_list
+            style.save()
+
+            for image in images_list:
+                format, imgstr = image.split(';base64,')
+                ext = format.split('/')[-1]
+                data = ContentFile(base64.b64decode(imgstr), name=style.name + "_" + str(uuid.uuid4()) + '.' + ext)
+                StyleImage.objects.create(style=style, image=data)
+
             serializer = StyleSerializer([style], many=True, context=serializer_context)
 
             # Return Styles data

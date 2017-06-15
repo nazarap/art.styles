@@ -5,3 +5,4 @@
 assets/app/build.js
 node_modules/
 api/migrations/
+/frontend/images/
