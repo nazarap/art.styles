@@ -3,6 +3,7 @@
     <div class="col-md-12">
         <h1 class="h1-responsive">Create style
             <small class="text-muted"></small>
+            <button class="btn btn-info" style="float: right; cursor: pointer" (click)="createStyle()">Create</button>
         </h1>
         <p style="color: #707070;">Here you can create new style.</p>
     </div>
@@ -13,16 +14,17 @@
 <div class="row wow fadeIn" data-wow-delay="0.2s">
 
     <div class="col-lg-12 wow fadeIn create-style">
-        <input placeholder="Style`s name" class="name">
+        <input placeholder="Style`s name" class="name" [(ngModel)]="styleName">
         <div class="image-upload">
-            <input type="file"/>
+            <i class="fa fa-camera-retro" aria-hidden="true"></i>
+            <input type="file" accept="image/*" (change)="imageUpload($event)"/>
         </div>
 
-        <div class="image">
-            <img class="image" src="http://www.jquery-az.com/wp-content/uploads/2015/12/13.3-Bootstrap-file-upload.png">
+        <div class="image" *ngFor="let image of imagesList; let $index = index" (click)="removeImage($index)">
+            <img src="{{ image }}">
         </div>
 
-        <textarea placeholder="Description"></textarea>
+        <textarea placeholder="Description" [(ngModel)]="styleDescription"></textarea>
 
         <a class="btn btn-info" (click)="openPopup()">Add Feature</a>
 
@@ -44,7 +46,7 @@
                 <div class="read-more btn-many">
                     <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
                     <a class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a class="btn btn-info" (click)="removeSelectedSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" (click)="removeSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
             </div>
 

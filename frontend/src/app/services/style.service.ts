@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import Style from './../domain/Style';
+import Subtype from './../domain/Subtype';
 import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
@@ -34,5 +35,17 @@ export class StyleService {
 
     getSearchStyleList(): Array<Style> {
         return this.searchStyleList;
+    }
+
+    createStyle(name: string, description: string, subtypesList: Array<number>, imagesList: Array<String>): any {
+        console.log(name, description, subtypesList);
+        this.http
+           .post(`http://localhost:8000/api/style/create/`, {name: name, description: description, subtypes_list: subtypesList, images_list: imagesList}, { headers: this.headers })
+           .map(res => res.json())
+           .subscribe(
+               data => {console.log(data.style)},
+               error => {},
+               () => {}
+           )
     }
 }

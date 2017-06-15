@@ -1,23 +1,62 @@
 import { Component } from '@angular/core';
 import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
+import { StyleService } from './../../services/style.service'
 import Subtype from './../../domain/Subtype';
 
 @Component({
   selector: 'admin-style',
   templateUrl: './admin-style.component.html',
   styleUrls: ['./admin-style.component.css'],
-  providers: [TypeService, SubtypeService]
+  providers: [TypeService, SubtypeService, StyleService]
 })
 export class AdminStyleComponent {
-  constructor(private typeService: TypeService, private subtypeService: SubtypeService) {}
+  imagesList: Array<String> = [];
+  styleName: string;
+  styleDescription: string;
 
-  openPopup(): any {
+  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService) {}
+
+  openPopup(): void {
       this.typeService.setTypePopup();
   }
 
+  imageUpload(event): void {
+      this.readThis(event.target);
+  }
+
+  readThis(inputValue: any): void {
+      let file:File = inputValue.files[0];
+      let myReader:FileReader = new FileReader();
+      let image;
+      myReader.onloadend = (e) => {
+        image = myReader.result;
+        this.imagesList.push(image);
+        inputValue = null;
+      }
+      myReader.readAsDataURL(file);
+  }
+
+  removeImage(imageIndex): void {
+      this.imagesList.splice(imageIndex, 1);
+  }
+
   getSubtypeList(): Array<Subtype> {
-      return [{"id":3,"name":"3Sub2","description":"3Des2","type":2,"images":["http://artyhomes.ru/wp-content/uploads/2015/03/vizr-arty.jpg"]},{"id":4,"name":"4Sub2","description":"4Des2","type":2,"images":["http://artyhomes.ru/wp-content/uploads/2015/03/vizr-arty.jpg"]}];
+      let arr = this.subtypeService.getSelectedSubtype();
+      return Object.keys(arr).map((k) => arr[k])
+  }
+
+  getSubtypeIDs(): Array<number> {
+      let arr = this.subtypeService.getSelectedSubtype();
+      return Object.keys(arr).map((k) => +k)
+  }
+
+  removeSubtype(id): any {
+      this.subtypeService.removeSelectedSubtype(id);
+  }
+
+  createStyle(): void {
+      this.styleService.createStyle(this.styleName, this.styleDescription, this.getSubtypeIDs(), this.imagesList);
   }
 
 }
