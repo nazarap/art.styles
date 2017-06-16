@@ -12,7 +12,7 @@
   color: white;
 }
 .navbar.navbar-light .breadcrumb.active,
-.navbar.navbar-light .nav-item.active {
+.navbar.navbar-light .nav-item a.active {
     background-color: rgba(158, 158, 158, 0.2);
 }
 

@@ -6088,6 +6088,7 @@ i.btn-danger {
       -ms-transition: 0.4s;
       transition: 0.4s; }
   .card img {
+    min-height: 203px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
   .card .card-block {

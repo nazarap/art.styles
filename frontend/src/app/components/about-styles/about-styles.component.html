@@ -1,0 +1,46 @@
+<div class="container">
+    <!--Page heading-->
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-md-12">
+            <h1 class="h1-responsive">All architectural styles
+                <small class="text-muted"></small>
+            </h1>
+            <p style="color: #707070;">Here you can see all architectural styles. You can search style by name. And read information about style.</p>
+        </div>
+    </div>
+    <!--/.Page heading-->
+    <hr>
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-lg-6 one-card wow fadeIn" *ngFor="let style of styleList">
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view overlay hm-white-slight">
+                    <img src="{{ style.images[0] }}" class="img-fluid" alt="">
+                    <a>
+                        <div class="mask"></div>
+                    </a>
+                </div>
+                <!--/.Card image-->
+
+                <!--Card content-->
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">{{ style.name }}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{ style.description }}</p>
+                    <div class="read-more">
+                        <a class="btn btn-info">Read more</a>
+                    </div>
+                </div>
+                <!--/.Card content-->
+
+            </div>
+            <!--/.Card-->
+        </div>
+    </div>
+
+    <hr>
+</div>

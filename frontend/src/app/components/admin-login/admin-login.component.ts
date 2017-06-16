@@ -13,6 +13,6 @@ export class AdminLoginComponent {
   constructor(private router: Router) {}
 
   loginListener(): any {
-      if( this.login === "admin" && this.password === "admin1" ) this.router.navigate(['/admin/style']);
+      if( this.login === "admin" && this.password === "admin1" ) this.router.navigate(['/admin/create/style']);
   }
 }

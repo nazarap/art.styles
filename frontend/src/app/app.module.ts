@@ -12,6 +12,10 @@ import { TypeModalComponent } from './components/type-modal/type-modal.component
 import { AdminContentComponent } from './components/admin-content/admin-content.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminStyleComponent } from './components/admin-style/admin-style.component';
+import { AdminTypeComponent } from './components/admin-type/admin-type.component';
+import { AdminSubtypeComponent } from './components/admin-subtype/admin-subtype.component';
+import { AdminBarComponent } from './components/admin-bar/admin-bar.component';
+import { AboutStylesComponent } from './components/about-styles/about-styles.component';
 
 import { routing, appRoutingProviders } from './app.routes';
 
@@ -25,7 +29,11 @@ import { routing, appRoutingProviders } from './app.routes';
     TypeModalComponent,
     AdminContentComponent,
     AdminLoginComponent,
-    AdminStyleComponent
+    AdminStyleComponent,
+    AdminTypeComponent,
+    AdminSubtypeComponent,
+    AdminBarComponent,
+    AboutStylesComponent
   ],
   imports: [
     BrowserModule,

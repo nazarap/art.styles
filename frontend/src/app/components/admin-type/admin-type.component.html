@@ -1,0 +1,23 @@
+<admin-bar></admin-bar>
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Create type
+            <small class="text-muted"></small>
+            <button class="btn btn-info" style="float: right; cursor: pointer" (click)="createType()">Create</button>
+        </h1>
+        <p style="color: #707070;">Here you can create new type.</p>
+    </div>
+</div>
+<!--/.Page heading-->
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+
+    <div class="col-lg-12 wow fadeIn create-type">
+        <input placeholder="Type`s name" class="name" [(ngModel)]="typeName">
+
+        <textarea placeholder="Type`s Description" [(ngModel)]="typeDescription"></textarea>
+    </div>
+
+</div>

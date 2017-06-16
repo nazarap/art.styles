@@ -1,0 +1,20 @@
+.navbar-nav {
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.navbar-nav .nav-item {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 5px 20px 5px 0;
+    border-bottom: 2px solid #507299;
+}
+
+.navbar-nav .nav-item a.nav-link {
+    color: #707070;
+}
+
+.navbar-nav .nav-item a.nav-link.active {
+    font-weight: 500;
+    color: #507299;
+}

@@ -31,4 +31,15 @@ export class SubtypeService {
     getSelectedSubtype(): { [key: string]: Subtype } {
         return this.selectedSubtypeList;
     }
+
+    createSubtype(name: string, description: string, typeID: number, imagesList: Array<String>): any {
+        this.http
+           .post(`http://localhost:8000/api/subtype/create/`, {name: name, description: description, type_id: typeID, images_list: imagesList}, { headers: this.headers })
+           .map(res => res.json())
+           .subscribe(
+               data => {},
+               error => {},
+               () => {}
+           )
+    }
 }

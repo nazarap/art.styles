@@ -1,0 +1,35 @@
+<admin-bar></admin-bar>
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Create subtype
+            <small class="text-muted"></small>
+            <button class="btn btn-info" style="float: right; cursor: pointer" (click)="createSubtype()">Create</button>
+        </h1>
+        <p style="color: #707070;">Here you can create new subtype.</p>
+    </div>
+</div>
+<!--/.Page heading-->
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+
+    <div class="col-lg-12 wow fadeIn create-style">
+        <input placeholder="Subtype`s name" class="name" [(ngModel)]="subtypeName">
+        <div class="image-upload">
+            <i class="fa fa-camera-retro" aria-hidden="true"></i>
+            <input type="file" accept="image/*" (change)="imageUpload($event)"/>
+        </div>
+
+        <div class="image" *ngFor="let image of imagesList; let $index = index" (click)="removeImage($index)">
+            <img src="{{ image }}">
+        </div><br>
+
+        <select [(ngModel)]="typeID">
+            <option *ngFor="let type of typeList" [value]="type.id">{{ type.name }}</option>
+        </select>
+
+        <textarea placeholder="Subtype`s description" [(ngModel)]="subtypeDescription"></textarea>
+    </div>
+</div>
+<!--/.First row-->
