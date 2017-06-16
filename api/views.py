@@ -148,6 +148,9 @@ class StyleViewSet(viewsets.ModelViewSet):
             }
             serializer = StyleSerializer(styles, many=True, context=serializer_context)
 
+            for style in serializer.data:
+                style['images'] = StyleImage.objects.filter(style_id=style['id']).values_list('image', flat=True)
+
             # Return Styles data
             return Response({'styles': serializer.data})
 
