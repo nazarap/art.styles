@@ -11,6 +11,13 @@
     <!--/.Page heading-->
     <hr>
 
+    <div class="search">
+        <input [(ngModel)]="searchKey" placeholder="Search...">
+        <div class="read-more" (click)="searchStyle()">
+            <a class="btn btn-info">search</a>
+        </div><br>
+    </div>
+
     <div class="row wow fadeIn" data-wow-delay="0.2s">
         <div class="col-lg-6 one-card wow fadeIn" *ngFor="let style of styleList">
             <!--Card-->
