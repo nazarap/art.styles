@@ -6,11 +6,13 @@ import { AdminStyleComponent } from './components/admin-style/admin-style.compon
 import { AdminTypeComponent } from './components/admin-type/admin-type.component';
 import { AdminSubtypeComponent } from './components/admin-subtype/admin-subtype.component';
 import { AboutStylesComponent } from './components/about-styles/about-styles.component';
+import { StylePageComponent } from './components/style-page/style-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchContentComponent },
   { path: 'styles', component: AboutStylesComponent },
+  { path: 'style/:id', component: StylePageComponent },
   { path: 'admin', component: AdminContentComponent,
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },

@@ -16,6 +16,7 @@ import { AdminTypeComponent } from './components/admin-type/admin-type.component
 import { AdminSubtypeComponent } from './components/admin-subtype/admin-subtype.component';
 import { AdminBarComponent } from './components/admin-bar/admin-bar.component';
 import { AboutStylesComponent } from './components/about-styles/about-styles.component';
+import { StylePageComponent } from './components/style-page/style-page.component';
 
 import { routing, appRoutingProviders } from './app.routes';
 
@@ -33,7 +34,8 @@ import { routing, appRoutingProviders } from './app.routes';
     AdminTypeComponent,
     AdminSubtypeComponent,
     AdminBarComponent,
-    AboutStylesComponent
+    AboutStylesComponent,
+    StylePageComponent
   ],
   imports: [
     BrowserModule,

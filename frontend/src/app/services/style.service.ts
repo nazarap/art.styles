@@ -22,6 +22,12 @@ export class StyleService {
                .map(res => res.json());
     }
 
+    getStyleById(styleId): any {
+        return this.http
+               .get(`http://localhost:8000/api/style/${styleId}/` , { headers: this.headers })
+               .map(res => res.json());
+    }
+
     searchStyles(searchKey): any {
         return this.http
                .post(`http://localhost:8000/api/styles/search/`, {search_key: searchKey}, { headers: this.headers })

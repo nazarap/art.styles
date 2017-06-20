@@ -20,11 +20,17 @@ export class SubtypeService {
                .map(res => res.json());
     }
 
-    addSelectedSubtype(subtype): any {
+    getSubtypesById(idsList): any {
+        return this.http
+               .post(`http://localhost:8000/api/subtypes/`, {ids_list: idsList}, { headers: this.headers })
+               .map(res => res.json());
+    }
+
+    addSelectedSubtype(subtype): void {
         this.selectedSubtypeList[subtype.id] = subtype;
     }
 
-    removeSelectedSubtype(subtypeID): any {
+    removeSelectedSubtype(subtypeID): void {
         delete this.selectedSubtypeList[subtypeID];
     }
 
