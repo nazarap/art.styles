@@ -69,7 +69,28 @@ class SubtypeViewSet(viewsets.ModelViewSet):
             return Response({'subtypes': serializer.data})
 
         except ObjectDoesNotExist:
-            return Response({"types": []}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"subtypes": []}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Get Subtypes list by Type token
+    def get_subtypes_by_ids_list(self, request):
+        # Get params from request
+        request_data = json.loads(request.body)
+        ids_list = request_data.get('ids_list')
+
+        try:
+            serializer_context = {
+                'request': Request(request),
+            }
+            subtypes = Subtype.objects.filter(id__in=ids_list)
+
+            serializer = SubtypeSerializer(subtypes, many=True, context=serializer_context)
+            for subtype in serializer.data:
+                subtype['images'] = list(SubtypeImage.objects.filter(subtype_id=subtype['id']).values_list('image', flat=True))
+
+            return Response({'subtypes': serializer.data})
+
+        except ObjectDoesNotExist:
+            return Response({"subtypes": []}, status=status.HTTP_400_BAD_REQUEST)
 
     # Create new Subtype
     def create_new_subtype(self, request):
@@ -186,6 +207,7 @@ class StyleViewSet(viewsets.ModelViewSet):
                 'request': Request(request),
             }
             serializer = StyleSerializer([style], many=True, context=serializer_context)
+            serializer.data[0]['images'] = StyleImage.objects.filter(style_id=style_id).values_list('image', flat=True)
 
             # Return Styles data
             return Response({'style': serializer.data[0]})
