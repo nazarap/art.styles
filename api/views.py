@@ -13,6 +13,10 @@ from django.db.models import Q
 import base64
 from django.core.files.base import ContentFile
 import uuid
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from rest_framework.authtoken.models import Token
+
 
 class TypeViewSet(viewsets.ModelViewSet):
     queryset = Type.objects.all()
@@ -274,3 +278,27 @@ class StyleImageSerializer(viewsets.ModelViewSet):
     # Find User`s vk friends
     def find_contacts_by_name(self, request):
         return Response({"token": "Is not active token key"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class LoginViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+
+    # Get User data and user token
+    def user_login(self, request):
+
+        # Get params from request
+        request_data = json.loads(request.body)
+        login = request_data.get('login')
+        password = request_data.get('password')
+
+        # Check User authenticate
+        user = authenticate(username=login, password=password)
+        if user is not None:
+            token, created = Token.objects.get_or_create(user=user)
+            request.session['auth'] = token.key
+
+            serializer_context = {
+                'request': Request(request),
+            }
+            return Response({'token': token.key})
+        return Response({"non_field_errors": "Unable to log in with provided credentials."}, status=status.HTTP_400_BAD_REQUEST)

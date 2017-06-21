@@ -2,6 +2,8 @@ from django.conf.urls import url
 from api import views as local_views
 
 urlpatterns = [
+    url(r'^user/login/$', local_views.LoginViewSet.as_view({'post': 'user_login'})),
+
     url(r'^subtypes/(?P<type_id>[0-9]+)/$', local_views.SubtypeViewSet.as_view({'get': 'get_subtypes_by_type_id'})),
     url(r'^subtypes/$', local_views.SubtypeViewSet.as_view({'post': 'get_subtypes_by_ids_list'})),
     url(r'^subtype/create/$', local_views.SubtypeViewSet.as_view({'post': 'create_new_subtype'})),
