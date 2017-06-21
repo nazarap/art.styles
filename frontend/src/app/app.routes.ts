@@ -7,6 +7,7 @@ import { AdminTypeComponent } from './components/admin-type/admin-type.component
 import { AdminSubtypeComponent } from './components/admin-subtype/admin-subtype.component';
 import { AboutStylesComponent } from './components/about-styles/about-styles.component';
 import { StylePageComponent } from './components/style-page/style-page.component';
+import TokenGuard from './guard/token.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -17,9 +18,9 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: AdminLoginComponent },
-      { path: 'create/style', component: AdminStyleComponent },
-      { path: 'create/type', component: AdminTypeComponent },
-      { path: 'create/subtype', component: AdminSubtypeComponent }
+      { path: 'create/style', component: AdminStyleComponent, canActivate: [TokenGuard] },
+      { path: 'create/type', component: AdminTypeComponent, canActivate: [TokenGuard] },
+      { path: 'create/subtype', component: AdminSubtypeComponent, canActivate: [TokenGuard] }
     ]
   }
 ];

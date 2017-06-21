@@ -16,7 +16,9 @@ export class AdminStyleComponent {
   styleName: string;
   styleDescription: string;
 
-  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService, private router: Router) {}
+  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService, private router: Router) {
+      console.log("token", sessionStorage.getItem("authToken"));
+  }
 
   openPopup(): void {
       this.typeService.setTypePopup();

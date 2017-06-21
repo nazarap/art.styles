@@ -19,6 +19,7 @@ import { AboutStylesComponent } from './components/about-styles/about-styles.com
 import { StylePageComponent } from './components/style-page/style-page.component';
 
 import { routing, appRoutingProviders } from './app.routes';
+import TokenGuard from './guard/token.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { routing, appRoutingProviders } from './app.routes';
     routing
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    TokenGuard
   ],
   bootstrap: [AppComponent]
 })

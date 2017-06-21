@@ -33,3 +33,11 @@
 .login-block button:hover {
     background-color: #688cb6;
 }
+
+.error-message {
+    color: #ff0202cc;
+    margin-top: 30px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+}
