@@ -27,14 +27,9 @@ export class TypeService {
         this.isOpenPopup = !this.isOpenPopup;
     }
 
-    createType(name: string, description: string): void {
-        this.http
+    createType(name: string, description: string): any {
+        return this.http
            .post(`http://localhost:8000/api/type/create/`, {name: name, description: description}, { headers: this.headers })
-           .map(res => res.json())
-           .subscribe(
-               data => {},
-               error => {},
-               () => {}
-           )
+           .map(res => res.json());
     }
 }

@@ -50,13 +50,8 @@ export class StyleService {
     }
 
     createStyle(name: string, description: string, subtypesList: Array<number>, imagesList: Array<String>): any {
-        this.http
+        return this.http
            .post(`http://localhost:8000/api/style/create/`, {name: name, description: description, subtypes_list: subtypesList, images_list: imagesList}, { headers: this.headers })
-           .map(res => res.json())
-           .subscribe(
-               data => {},
-               error => {},
-               () => {}
-           )
+           .map(res => res.json());
     }
 }

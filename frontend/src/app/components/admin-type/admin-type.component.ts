@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TypeService } from './../../services/type.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-type',
@@ -11,9 +12,14 @@ export class AdminTypeComponent {
   typeName: string;
   typeDescription: string;
 
-  constructor(private typeService: TypeService) {}
+  constructor(private typeService: TypeService, private router: Router) {}
 
   createType(): void {
-      this.typeService.createType(this.typeName, this.typeDescription);
+      this.typeService.createType(this.typeName, this.typeDescription)
+      .subscribe(
+          data => { this.router.navigate(['/styles']) },
+          error => {},
+          () => {}
+      )
   }
 }

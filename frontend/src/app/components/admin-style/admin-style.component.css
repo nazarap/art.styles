@@ -66,3 +66,12 @@ div.image-upload i.fa {
     margin-top: 45px;
     margin-left: 45px;
 }
+
+.card > .view {
+    background: #f5f5f5;
+}
+
+.card > .view > img {
+    height: 185px;
+    margin: 0 auto;
+}

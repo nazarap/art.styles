@@ -3,6 +3,7 @@ import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import { StyleService } from './../../services/style.service'
 import Subtype from './../../domain/Subtype';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-style',
@@ -15,7 +16,7 @@ export class AdminStyleComponent {
   styleName: string;
   styleDescription: string;
 
-  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService) {}
+  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService, private router: Router) {}
 
   openPopup(): void {
       this.typeService.setTypePopup();
@@ -56,7 +57,12 @@ export class AdminStyleComponent {
   }
 
   createStyle(): void {
-      this.styleService.createStyle(this.styleName, this.styleDescription, this.getSubtypeIDs(), this.imagesList);
+      this.styleService.createStyle(this.styleName, this.styleDescription, this.getSubtypeIDs(), this.imagesList)
+      .subscribe(
+          data => { this.router.navigate(['/styles']) },
+          error => {},
+          () => {}
+      )
   }
 
 }

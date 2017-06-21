@@ -3,6 +3,7 @@ import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import Subtype from './../../domain/Subtype';
 import Type from './../../domain/Type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-subtype',
@@ -17,7 +18,7 @@ export class AdminSubtypeComponent implements OnInit {
   typeID: number;
   typeList: Array<Type>;
 
-  constructor(private typeService: TypeService, private subtypeService: SubtypeService) {}
+  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private router: Router) {}
 
   ngOnInit(): void {
       this.typeService.getTypes().subscribe(
@@ -52,7 +53,12 @@ export class AdminSubtypeComponent implements OnInit {
   }
 
   createSubtype(): void {
-      this.subtypeService.createSubtype(this.subtypeName, this.subtypeDescription, this.typeID, this.imagesList);
+      this.subtypeService.createSubtype(this.subtypeName, this.subtypeDescription, this.typeID, this.imagesList)
+      .subscribe(
+          data => { this.router.navigate(['/styles']) },
+          error => {},
+          () => {}
+      )
   }
 
 }

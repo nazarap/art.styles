@@ -5,3 +5,11 @@
     color: #bfbfbf;
     margin: 100px auto 100px auto;
 }
+.card > .view {
+    background: #f5f5f5;
+}
+
+.card > .view > img {
+    height: 185px;
+    margin: 0 auto;
+}
