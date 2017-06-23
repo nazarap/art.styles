@@ -5,7 +5,7 @@ import Type from './../../domain/Type';
 import Subtype from './../../domain/Subtype';
 
 @Component({
-  selector: 'type-modal',
+  selector: 'app-type-modal',
   templateUrl: './type-modal.component.html',
   styleUrls: ['./type-modal.component.css']
 })
@@ -19,7 +19,7 @@ export class TypeModalComponent implements OnInit {
   ngOnInit(): void {
       this.typeService.getTypes().subscribe(
           data => {this.typeList = data.types as Type[]},
-          error => {alert(error)},
+          error => {},
           () => {}
       )
   }
@@ -36,7 +36,7 @@ export class TypeModalComponent implements OnInit {
       if(!!typeID) {
           this.subtypeService.getSubtypes(typeID).subscribe(
               data => {this.subtypeList = data.subtypes as Subtype[]},
-              error => {alert(error)},
+              error => {},
               () => {}
           )
           this.isOpenSubPopup = true;
@@ -52,5 +52,6 @@ export class TypeModalComponent implements OnInit {
   getSelectedList(): { [key: string]: Subtype } {
       return this.subtypeService.getSelectedSubtype();
   }
+
 
 }

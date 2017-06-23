@@ -3,10 +3,10 @@ import { StyleService } from './../../services/style.service'
 import { SubtypeService } from './../../services/subtype.service'
 import Style from './../../domain/Style';
 import Subtype from './../../domain/Subtype';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'style-page',
+  selector: 'app-style-page',
   templateUrl: './style-page.component.html',
   styleUrls: ['./style-page.component.css'],
   providers: [StyleService, SubtypeService]
@@ -26,7 +26,7 @@ export class StylePageComponent implements OnInit {
   ngOnInit(): void {
       this.styleService.getStyleById(this.styleID).subscribe(
           data => {this.style = data.style as Style},
-          error => {alert(error)},
+          error => {},
           () => { this.getSubtypes(this.style.subtypes) }
       )
   }
@@ -34,7 +34,7 @@ export class StylePageComponent implements OnInit {
   getSubtypes(idsList): void {
       this.subtypeService.getSubtypesById(idsList).subscribe(
           data => {this.subtypeList = data.subtypes as Subtype[]},
-          error => {alert(error)},
+          error => {},
           () => {}
       )
   }
@@ -42,4 +42,5 @@ export class StylePageComponent implements OnInit {
   imagePopup(imageURL): void {
       this.imageURL = imageURL;
   }
+
 }

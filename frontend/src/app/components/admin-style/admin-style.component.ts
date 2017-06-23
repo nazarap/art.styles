@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import { StyleService } from './../../services/style.service'
@@ -6,12 +6,12 @@ import Subtype from './../../domain/Subtype';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'admin-style',
+  selector: 'app-admin-style',
   templateUrl: './admin-style.component.html',
   styleUrls: ['./admin-style.component.css'],
   providers: [TypeService, SubtypeService, StyleService]
 })
-export class AdminStyleComponent {
+export class AdminStyleComponent implements OnInit {
   imagesList: Array<String> = [];
   styleName: string;
   styleDescription: string;
@@ -66,5 +66,7 @@ export class AdminStyleComponent {
           () => {}
       )
   }
+
+  ngOnInit() { }
 
 }

@@ -3,7 +3,7 @@ import { StyleService } from './../../services/style.service'
 import Style from './../../domain/Style'
 
 @Component({
-  selector: 'about-styles',
+  selector: 'app-about-styles',
   templateUrl: './about-styles.component.html',
   styleUrls: ['./about-styles.component.css'],
   providers: [StyleService]
@@ -21,7 +21,7 @@ export class AboutStylesComponent implements OnInit {
   getStyle(): void {
       this.styleService.getStyles().subscribe(
           data => {this.styleList = data.styles as Style[]},
-          error => {alert(error)},
+          error => {},
           () => {}
       )
   }
@@ -30,7 +30,7 @@ export class AboutStylesComponent implements OnInit {
       if(!this.searchKey) { this.getStyle(); return; }
       this.styleService.searchStyles(this.searchKey).subscribe(
           data => {this.styleList = data.styles as Style[]},
-          error => {alert(error)},
+          error => {},
           () => {}
       )
   }

@@ -5,12 +5,13 @@ import { SubtypeService } from './../../services/subtype.service'
 import Subtype from './../../domain/Subtype';
 
 @Component({
-  selector: 'search-block',
+  selector: 'app-search-block',
   templateUrl: './search-block.component.html',
   styleUrls: ['./search-block.component.css'],
   providers: [TypeService, SubtypeService]
 })
 export class SearchBlockComponent implements OnInit {
+
   constructor(private styleService: StyleService, private typeService: TypeService, private subtypeService: SubtypeService) {}
 
   ngOnInit(): void {}

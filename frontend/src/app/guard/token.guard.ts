@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable()
-export default class TokenGuard implements CanActivate {
+export class TokenGuard implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   canActivate() {
 
-      if(!sessionStorage.getItem("authToken")) {
+      if(typeof sessionStorage === "undefined" || !sessionStorage.getItem("authToken")) {
           this.router.navigate(['/admin/login']);
           return false;
       }

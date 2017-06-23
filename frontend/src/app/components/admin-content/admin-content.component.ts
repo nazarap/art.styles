@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'admin-content',
-  template: `<div class="container">
-                <router-outlet></router-outlet>
-            </div>`,
+  selector: 'app-admin-content',
+  templateUrl: './admin-content.component.html',
   styleUrls: ['./admin-content.component.css']
 })
-export class AdminContentComponent {
-  constructor() {}
+export class AdminContentComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }

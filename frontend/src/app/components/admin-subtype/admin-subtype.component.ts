@@ -6,12 +6,13 @@ import Type from './../../domain/Type';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'admin-subtype',
+  selector: 'app-admin-subtype',
   templateUrl: './admin-subtype.component.html',
   styleUrls: ['./admin-subtype.component.css'],
   providers: [TypeService, SubtypeService]
 })
 export class AdminSubtypeComponent implements OnInit {
+
   imagesList: Array<String> = [];
   subtypeName: string;
   subtypeDescription: string;
@@ -23,7 +24,7 @@ export class AdminSubtypeComponent implements OnInit {
   ngOnInit(): void {
       this.typeService.getTypes().subscribe(
           data => {this.typeList = data.types as Type[]},
-          error => {alert(error)},
+          error => {},
           () => {}
       )
   }

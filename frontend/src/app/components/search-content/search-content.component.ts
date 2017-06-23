@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StyleService } from './../../services/style.service'
 
 @Component({
-  selector: 'search-content',
-  template: `<div class="container">
-                <search-block></search-block>
-                <list-block></list-block>
-            </div>`,
+  selector: 'app-search-content',
+  templateUrl: './search-content.component.html',
   styleUrls: ['./search-content.component.css'],
   providers: [StyleService]
 })
-export class SearchContentComponent {
-  constructor() {}
+export class SearchContentComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }

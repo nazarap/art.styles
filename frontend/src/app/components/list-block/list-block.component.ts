@@ -3,7 +3,7 @@ import Style from './../../domain/Style';
 import { StyleService } from './../../services/style.service'
 
 @Component({
-  selector: 'list-block',
+  selector: 'app-list-block',
   templateUrl: './list-block.component.html',
   styleUrls: ['./list-block.component.css']
 })
@@ -16,4 +16,5 @@ export class ListBlockComponent implements OnInit {
   getSearchStyleList(): Array<Style> {
       return this.styleService.getSearchStyleList();
   }
+
 }

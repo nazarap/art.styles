@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TypeService } from './../../services/type.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'admin-type',
+  selector: 'app-admin-type',
   templateUrl: './admin-type.component.html',
   styleUrls: ['./admin-type.component.css'],
   providers: [TypeService]
 })
-export class AdminTypeComponent {
+export class AdminTypeComponent implements OnInit {
   typeName: string;
   typeDescription: string;
 
@@ -22,4 +22,7 @@ export class AdminTypeComponent {
           () => {}
       )
   }
+
+  ngOnInit() { }
+
 }
