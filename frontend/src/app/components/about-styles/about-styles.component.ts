@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StyleService } from './../../services/style.service'
 import Style from './../../domain/Style'
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-about-styles',
@@ -34,5 +35,7 @@ export class AboutStylesComponent implements OnInit {
           () => {}
       )
   }
+
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 
 }

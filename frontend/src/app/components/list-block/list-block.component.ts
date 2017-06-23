@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Style from './../../domain/Style';
 import { StyleService } from './../../services/style.service'
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-list-block',
@@ -16,5 +17,7 @@ export class ListBlockComponent implements OnInit {
   getSearchStyleList(): Array<Style> {
       return this.styleService.getSearchStyleList();
   }
+
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 
 }

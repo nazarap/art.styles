@@ -14,7 +14,7 @@
     <div class="content-style row wow fadeIn" data-wow-delay="0.2s">
         <div class="wow fadeIn">
             <div *ngFor="let image of style.images" class="image"(click)="imagePopup(image)">
-                <img src="{{ image }}">
+                <img src="{{ imageUrl(image) }}">
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="card">
 
                 <div class="view overlay hm-white-slight">
-                    <img src="{{ subtype.images[0] }}" class="img-fluid" alt="{{ subtype.name }}">
+                    <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}">
                     <a>
                         <div class="mask"></div>
                     </a>
@@ -41,7 +41,7 @@
 
 <div *ngIf="imageURL">
     <div class="popup-background"></div>
-    <div class="setting-popup" [ngStyle]="{'background-image': 'url(' + imageURL + ')'}">
+    <div class="setting-popup" [ngStyle]="{'background-image': 'url(' + imageUrl(imageURL) + ')'}">
         <a class="btn btn-info btn-times" (click)="imagePopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
     </div>
 </div>

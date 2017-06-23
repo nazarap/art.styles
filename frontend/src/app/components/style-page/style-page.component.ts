@@ -4,6 +4,7 @@ import { SubtypeService } from './../../services/subtype.service'
 import Style from './../../domain/Style';
 import Subtype from './../../domain/Subtype';
 import { ActivatedRoute } from '@angular/router';
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-style-page',
@@ -42,5 +43,7 @@ export class StylePageComponent implements OnInit {
   imagePopup(imageURL): void {
       this.imageURL = imageURL;
   }
+
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 
 }

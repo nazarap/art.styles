@@ -3,6 +3,7 @@ import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import Type from './../../domain/Type';
 import Subtype from './../../domain/Subtype';
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-type-modal',
@@ -53,5 +54,5 @@ export class TypeModalComponent implements OnInit {
       return this.subtypeService.getSelectedSubtype();
   }
 
-
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 }

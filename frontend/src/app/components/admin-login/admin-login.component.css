@@ -35,7 +35,7 @@
 }
 
 .error-message {
-    color: #ff0202cc;
+    color: rgba(255, 2, 2, 0.67);
     margin-top: 30px;
     text-align: center;
     font-family: inherit;
