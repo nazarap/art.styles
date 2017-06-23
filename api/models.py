@@ -23,12 +23,12 @@ class Style(models.Model):
 
 
 class SubtypeImage(models.Model):
-    image = models.ImageField(upload_to='frontend/images')
+    image = models.ImageField(upload_to='assets/images')
     subtype = models.ForeignKey(Subtype, on_delete=models.CASCADE)
 
 
 class StyleImage(models.Model):
-    image = models.ImageField(upload_to='frontend/images')
+    image = models.ImageField(upload_to='assets/images')
     style = models.ForeignKey(Style, on_delete=models.CASCADE)
 
 

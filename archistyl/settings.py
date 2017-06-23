@@ -90,6 +90,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_WHITELIST = (
     'localhost:63342',
     'localhost:4200',
+    'localhost:4000',
 )
 
 # Password validation
@@ -128,8 +129,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/frontend/'
+STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "frontend"),
+    os.path.join(BASE_DIR, "assets"),
 )
