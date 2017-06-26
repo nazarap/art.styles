@@ -1,11 +1,14 @@
 <!--Page heading-->
 <div class="row wow fadeIn" data-wow-delay="0.2s">
     <div class="col-md-12">
-        <h1 class="h1-responsive">Search results by your features
+        <h1 class="h1-responsive">Знайдені результати по вибраним особливостям
+            <!--Search results by your features-->
             <small class="text-muted"></small>
         </h1>
-        <p style="color: #707070;">Here you can see all the styles that match the features that you selected above.
-            If the list is not updated, use the "Search" button, located above.</p>
+        <p style="color: #707070;">Тут ви можете побачити всі стилі, які відповідають вибраним вище особливостям.
+             Якщо список не оновлено, скористайтеся кнопкою "Пошук", розташованою вище.</p>
+        <!--Here you can see all the styles that match the features that you selected above.-->
+            <!--If the list is not updated, use the "Search" button, located above.-->
     </div>
 </div>
 <!--/.Page heading-->
@@ -33,7 +36,7 @@
                 <!--Text-->
                 <p class="card-text">{{ style.description }}</p>
                 <div class="read-more">
-                    <a class="btn btn-info" routerLink="/style/{{style.id}}">Read more</a>
+                    <a class="btn btn-info" routerLink="/style/{{style.id}}">Детальніше</a>
                 </div>
             </div>
             <!--/.Card content-->
@@ -41,8 +44,9 @@
         </div>
         <!--/.Card-->
     </div>
-    <h1 class="empty-list" *ngIf="getSearchStyleList() && getSearchStyleList().length == 0">Sorry, No results found for your query.</h1>
-    <h1 class="empty-list" *ngIf="!getSearchStyleList()">Styles list {{ getSearchStyleList() }}</h1>
+    <h1 class="empty-list" *ngIf="getSearchStyleList() && getSearchStyleList().length == 0">Вибачте, не знайдено жодного результату по вашому запиту.</h1>
+    <!--Sorry, No results found for your query.-->
+    <h1 class="empty-list" *ngIf="!getSearchStyleList()">Список стилів {{ getSearchStyleList() }}</h1>
     <!--/.First column-->
 </div>
 

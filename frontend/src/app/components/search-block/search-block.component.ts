@@ -3,6 +3,7 @@ import { StyleService } from './../../services/style.service';
 import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import Subtype from './../../domain/Subtype';
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-search-block',
@@ -32,5 +33,7 @@ export class SearchBlockComponent implements OnInit {
   search(): any {
       this.styleService.search(Object.keys(this.subtypeService.getSelectedSubtype()))
   }
+
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 
 }

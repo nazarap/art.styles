@@ -1,11 +1,14 @@
 <!--Page heading-->
 <div class="row wow fadeIn" data-wow-delay="0.2s">
     <div class="col-md-12">
-        <h1 class="h1-responsive">Search results by your features
+        <h1 class="h1-responsive">Виберіть основні особливості стилю
+            <!--Search results by your features-->
             <small class="text-muted"></small>
         </h1>
-        <p style="color: #707070;">Please select the main features of the style that you are looking for. Use the "Add Feature" button
-            for finding and adding features styilyu search. Use the "Search" button to launch style search.</p>
+        <p style="color: #707070;">Виберіть основні особливості стилю який ви шукаєте. Скористайтесь кнопкою "Добавити Особливість" для
+                        знаходження і добавлення особливостей для пошуку стилю. Використовуйте кнопку "Пошук" щоб запустити пошук.</p>
+        <!--Please select the main features of the style that you are looking for. Use the "Add Feature" button-->
+            <!--for finding and adding features styilyu search. Use the "Search" button to launch style search.-->
     </div>
 </div>
 <!--/.Page heading-->
@@ -20,8 +23,8 @@
 
             <!--Card image-->
             <div class="view overlay hm-white-slight">
-                <img src="{{ subtype.images[0] }}" class="img-fluid" alt="{{ subtype.name }}">
-                <a href="#!">
+                <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}">
+                <a>
                     <div class="mask"></div>
                 </a>
             </div>
@@ -43,15 +46,15 @@
         </div>
         <!--/.Card-->
     </div>
-    <h1 class="empty-list" *ngIf="!getSelectedList().length">Style`s feature list</h1>
+    <h1 class="empty-list" *ngIf="!getSelectedList().length">Список особливостей</h1>
     <!--/.First column-->
 </div>
 <!--/.First row-->
 
-<a class="btn btn-info" (click)="openPopup()">Add Feature</a>
+<a class="btn btn-info" (click)="openPopup()">Добавити Особливість</a>
 
 <app-type-modal></app-type-modal>
 
-<a class="btn btn-info" (click)="search()">Search</a>
+<a class="btn btn-info" (click)="search()">Пошук</a>
 
 <br><br><br>

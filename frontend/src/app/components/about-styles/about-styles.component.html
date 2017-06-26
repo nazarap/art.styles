@@ -2,19 +2,21 @@
     <!--Page heading-->
     <div class="row wow fadeIn" data-wow-delay="0.2s">
         <div class="col-md-12">
-            <h1 class="h1-responsive">All architectural styles
+            <h1 class="h1-responsive">Архітектурні стилі
+                <!--All architectural styles-->
                 <small class="text-muted"></small>
             </h1>
-            <p style="color: #707070;">Here you can see all architectural styles. You can search style by name. And read information about style.</p>
+            <p style="color: #707070;">Тут ви можете побачити список всіх стилів архітектури, знайти стиль по назві і дізнатися більше про вибраний стиль.</p>
+            <!--Here you can see all architectural styles. You can search style by name. And read information about style.-->
         </div>
     </div>
     <!--/.Page heading-->
     <hr>
 
     <div class="search">
-        <input [(ngModel)]="searchKey" placeholder="Search...">
+        <input [(ngModel)]="searchKey" placeholder="Пошук...">
         <div class="read-more" (click)="searchStyle()">
-            <a class="btn btn-info">search</a>
+            <a class="btn btn-info">пошук</a>
         </div><br>
     </div>
 
@@ -39,7 +41,7 @@
                     <!--Text-->
                     <p class="card-text">{{ style.description }}</p>
                     <div class="read-more">
-                        <a class="btn btn-info" routerLink="/style/{{style.id}}">Read more</a>
+                        <a class="btn btn-info" routerLink="/style/{{style.id}}">Детальніше</a>
                     </div>
                 </div>
                 <!--/.Card content-->

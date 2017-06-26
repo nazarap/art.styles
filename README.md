@@ -76,7 +76,10 @@ Django migrate
 $ python manage.py makemigrations api
 $ python manage.py migrate
 ```
-
+Django create superuser
+```sh
+$ python manage.py createsuperuser --username=joe --email=joe@example.com
+```
 
 
 FRONT-END SIDE
