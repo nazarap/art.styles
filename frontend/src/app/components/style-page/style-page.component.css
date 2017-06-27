@@ -61,3 +61,8 @@ h2 {
     background: inherit;
     float: right;
 }
+
+.btn-info:hover {
+    background: #82aa90;
+    float: right;
+}

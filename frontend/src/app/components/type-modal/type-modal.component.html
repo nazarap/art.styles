@@ -30,7 +30,7 @@
                         <h4 class="card-title">{{ type.name }}</h4>
                         <!--Text-->
                         <div class="read-more btn-many">
-                            <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                            <a *ngIf="false" class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
                             <a class="btn btn-info" (click)="subPopup(type.id)"><i class="fa fa-plus" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -74,9 +74,9 @@
                                 <h4 class="card-title">{{ subtype.name }}</h4>
                                 <!--Text-->
                                 <div class="read-more btn-many">
-                                    <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                                    <a *ngIf="false" class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
                                     <a *ngIf="!getSelectedList()[subtype.id]" class="btn btn-info" (click)="addSubtype(subtype)"><i class="fa fa-plus" aria-hidden="true"></i></a>
-                                    <a *ngIf="getSelectedList()[subtype.id]" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                    <a *ngIf="getSelectedList()[subtype.id]" class="btn btn-info btn-add" style="background-color: #8ab599 !important;"><i class="fa fa-check" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             <!--/.Card content-->

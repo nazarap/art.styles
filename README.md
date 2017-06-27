@@ -1,4 +1,4 @@
-Archistyl [Architectural styles]
+ARTstyle [Architectural styles]
 =====================================================
 
 This service is for architects or people interested in architecture, where you can find information on the style of architecture for its features

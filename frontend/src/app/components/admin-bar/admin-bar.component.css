@@ -7,7 +7,7 @@
     list-style-type: none;
     cursor: pointer;
     padding: 5px 20px 5px 0;
-    border-bottom: 2px solid #507299;
+    border-bottom: 2px solid #8ab599;
 }
 
 .navbar-nav .nav-item a.nav-link {
@@ -16,5 +16,5 @@
 
 .navbar-nav .nav-item a.nav-link.active {
     font-weight: 500;
-    color: #507299;
+    color: #8ab599;
 }

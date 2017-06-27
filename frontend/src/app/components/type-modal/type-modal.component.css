@@ -18,11 +18,11 @@
     left: 15%;
     top: 5%;
     height: 80%;
-    padding-bottom: 90px;
+    padding-bottom: 75px;
 }
 
 .setting-popup .popup-header {
-    background: #507299;
+    background: #8ab599;
     padding: 20px 50px;
 }
 
@@ -92,7 +92,8 @@
 
 .setting-popup .btn {
     padding: 10px 17px;
-    background: #688cb6;
+    margin: 0;
+    background: #8ab599;
     color: #fff !important;
 }
 
@@ -116,4 +117,8 @@
 .card > .view > img {
     height: 185px;
     margin: 0 auto;
+}
+
+.btn-add {
+    padding: 10px 15px !important;
 }

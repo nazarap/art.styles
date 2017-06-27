@@ -36,8 +36,8 @@
                 <h4 class="card-title">{{ subtype.name }}</h4>
                 <!--Text-->
                 <div class="read-more btn-many">
-                    <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
-                    <a class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" *ngIf="false"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" *ngIf="false"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a class="btn btn-info" (click)="removeSelectedSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
             </div>

@@ -2098,7 +2098,7 @@ img {
   background-color: #37474F; }
 
 .pagination.pg-dark .active .page-link {
-  background-color: #507299; }
+  background-color: #8ab599; }
 
 .pagination.pg-bluegrey .active .page-link {
   background-color: #3F729B; }
@@ -5326,9 +5326,9 @@ button:focus {
     background-color: #006228 !important; }
 
 .btn-info {
-  background: #507299; }
+  background: #8ab599; }
   .btn-info:hover, .btn-info:focus {
-    background-color: #688cb6 !important; }
+    background-color: #82aa90 !important; }
   .btn-info.active {
     background-color: #14799e !important; }
 
@@ -6445,7 +6445,7 @@ footer.page-footer {
     background-color: rgba(0, 0, 0, 0);
     text-align: center; }
   footer.page-footer a {
-    color: #507299; }
+    color: #8ab599; }
   footer.page-footer .title {
     text-transform: uppercase; }
   footer.page-footer .call-to-action {

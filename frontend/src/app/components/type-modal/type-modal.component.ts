@@ -19,7 +19,7 @@ export class TypeModalComponent implements OnInit {
 
   ngOnInit(): void {
       this.typeService.getTypes().subscribe(
-          data => {this.typeList = data.types as Type[]},
+          data => {this.typeList = data.types as Type[]; this.typeList = [...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList, ...this.typeList]},
           error => {},
           () => {}
       )

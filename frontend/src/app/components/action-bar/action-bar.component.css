@@ -13,11 +13,11 @@
 }
 .navbar.navbar-light .breadcrumb.active,
 .navbar.navbar-light .nav-item a.active {
-    background-color: rgba(158, 158, 158, 0.2);
+    background-color: hsla(140.6, 12.6%, 50.2%, 0.3);
 }
 
 .navbar {
-    background-color: #507299;
+    background-color: #8ab599;
     font-weight: 400;
     padding: 15px 0;
     box-shadow: none;

@@ -1,0 +1,9 @@
+.presentation {
+    background: #8ab599;
+    margin: -50px 0 50px 0;
+}
+
+.presentation > img {
+    width: 30%;
+    margin-left: 35%;
+}
