@@ -16,9 +16,7 @@ export class AdminStyleComponent implements OnInit {
   styleName: string;
   styleDescription: string;
 
-  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService, private router: Router) {
-      console.log("token", sessionStorage.getItem("authToken"));
-  }
+  constructor(private typeService: TypeService, private subtypeService: SubtypeService, private styleService: StyleService, private router: Router) { }
 
   openPopup(): void {
       this.typeService.setTypePopup();

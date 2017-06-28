@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StyleService } from './../../services/style.service'
 import Style from './../../domain/Style'
 import ImageAbstract from './../../domain/ImageAbstract';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-styles',
@@ -13,7 +14,15 @@ export class AboutStylesComponent implements OnInit {
   styleList: Array<Style>;
   searchKey: string;
 
-  constructor(private styleService: StyleService) {}
+  constructor(private styleService: StyleService, private meta: Meta, private title: Title) {
+      title.setTitle("ARTstyle - Стилі архітектури");
+
+      meta.addTags([
+          {
+            name: 'description', content: 'Стилів архітектури. Знайти стиль архітектури по імені. Можливість здійснювати пошук архітектурних стилів по імені.'
+          },
+      ])
+  }
 
   ngOnInit(): void {
       this.getStyle();

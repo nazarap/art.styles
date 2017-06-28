@@ -4,6 +4,7 @@ import { TypeService } from './../../services/type.service'
 import { SubtypeService } from './../../services/subtype.service'
 import Subtype from './../../domain/Subtype';
 import ImageAbstract from './../../domain/ImageAbstract';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-block',
@@ -13,9 +14,12 @@ import ImageAbstract from './../../domain/ImageAbstract';
 })
 export class SearchBlockComponent implements OnInit {
 
-  constructor(private styleService: StyleService, private typeService: TypeService, private subtypeService: SubtypeService) {}
+  constructor(private styleService: StyleService, private typeService: TypeService, private subtypeService: SubtypeService,
+      private route: ActivatedRoute) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   openPopup(): any {
       this.typeService.setTypePopup();

@@ -5,6 +5,7 @@ import Style from './../../domain/Style';
 import Subtype from './../../domain/Subtype';
 import { ActivatedRoute } from '@angular/router';
 import ImageAbstract from './../../domain/ImageAbstract';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-style-page',
@@ -18,7 +19,9 @@ export class StylePageComponent implements OnInit {
   imageURL: string;
   styleID: number;
 
-  constructor(private styleService: StyleService, private subtypeService: SubtypeService, private route:ActivatedRoute) {
+  constructor(private styleService: StyleService, private subtypeService: SubtypeService, private route:ActivatedRoute,
+                private meta: Meta, private title: Title) {
+
       this.route.params.subscribe(params => {
           this.styleID = params['id'];
       });
@@ -28,7 +31,17 @@ export class StylePageComponent implements OnInit {
       this.styleService.getStyleById(this.styleID).subscribe(
           data => {this.style = data.style as Style},
           error => {},
-          () => { this.getSubtypes(this.style.subtypes) }
+          () => {
+                    this.getSubtypes(this.style.subtypes);
+
+                    this.title.setTitle("ARTstyle - " + this.style.name);
+
+                    this.meta.addTags([
+                      {
+                        name: 'description', content: this.style.description
+                      },
+                    ])
+                }
       )
   }
 

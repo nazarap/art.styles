@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StyleService } from './../../services/style.service'
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search-content',
@@ -9,7 +10,15 @@ import { StyleService } from './../../services/style.service'
 })
 export class SearchContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) {
+      title.setTitle("ARTstyle - Стилі архітектури");
+
+      meta.addTags([
+          {
+            name: 'description', content: 'Стилі архітектури. Знайти стиль архітектури по основним особливостям. Пошук стилів архітектури по основним особливостям.'
+          },
+      ])
+  }
 
   ngOnInit() {
   }

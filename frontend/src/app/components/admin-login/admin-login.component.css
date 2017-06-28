@@ -29,9 +29,8 @@
     cursor: pointer;
 }
 
-
 .login-block button:hover {
-    background-color: #688cb6;
+    background-color: #82aa90;
 }
 
 .error-message {

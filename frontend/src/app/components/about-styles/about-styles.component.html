@@ -27,7 +27,7 @@
 
                 <!--Card image-->
                 <div class="view overlay hm-white-slight">
-                    <img src="{{ imageUrl(style.images[0]) }}" class="img-fluid" alt="">
+                    <img src="{{ imageUrl(style.images[0]) }}" class="img-fluid" alt="{{ style.name }}" title="{{ style.name }}">
                     <a>
                         <div class="mask"></div>
                     </a>
@@ -39,7 +39,7 @@
                     <!--Title-->
                     <h4 class="card-title">{{ style.name }}</h4>
                     <!--Text-->
-                    <p class="card-text">{{ style.description }}</p>
+                    <p class="card-text">{{ style.description | truncate : 120 }}</p>
                     <div class="read-more">
                         <a class="btn btn-info" routerLink="/style/{{style.id}}">Детальніше</a>
                     </div>
