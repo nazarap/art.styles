@@ -39,9 +39,9 @@
                     <!--Title-->
                     <h4 class="card-title">{{ style.name }}</h4>
                     <!--Text-->
-                    <p class="card-text">{{ style.description | truncate : 120 }}</p>
+                    <p class="card-text">{{ style.description | truncate : 50 }}</p>
                     <div class="read-more">
-                        <a class="btn btn-info" routerLink="/style/{{style.id}}">Детальніше</a>
+                        <a class="btn btn-info" routerLink="/style/{{style.link}}">Детальніше</a>
                     </div>
                 </div>
                 <!--/.Card content-->

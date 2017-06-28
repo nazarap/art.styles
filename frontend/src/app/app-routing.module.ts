@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchContentComponent },
   { path: 'styles', component: AboutStylesComponent },
-  { path: 'style/:id', component: StylePageComponent },
+  { path: 'style/:link', component: StylePageComponent },
   { path: 'admin', component: AdminContentComponent,
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },

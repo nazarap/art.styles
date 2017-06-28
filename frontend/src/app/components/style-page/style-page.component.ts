@@ -17,18 +17,18 @@ export class StylePageComponent implements OnInit {
   style: Style = new Style("", "", [], []);
   subtypeList: Array<Subtype>;
   imageURL: string;
-  styleID: number;
+  styleLink: string;
 
   constructor(private styleService: StyleService, private subtypeService: SubtypeService, private route:ActivatedRoute,
                 private meta: Meta, private title: Title) {
 
       this.route.params.subscribe(params => {
-          this.styleID = params['id'];
+          this.styleLink = params['link'];
       });
   }
 
   ngOnInit(): void {
-      this.styleService.getStyleById(this.styleID).subscribe(
+      this.styleService.getStyleByLink(this.styleLink).subscribe(
           data => {this.style = data.style as Style},
           error => {},
           () => {

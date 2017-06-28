@@ -5237,6 +5237,7 @@ button:focus {
 
 .btn {
   font-size: 0.8rem;
+  margin: 6px 6px 6px 0;
   padding: 0.85rem 2.13rem; }
   .btn.btn-lg {
     font-size: 0.9rem;
