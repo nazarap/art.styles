@@ -17,7 +17,7 @@ class SubtypeSerializer(serializers.ModelSerializer):
 class StyleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Style
-        fields = ('id', 'name', 'description', 'subtypes')
+        fields = ('id', 'name', 'link', 'description', 'subtypes')
 
 
 class SubtypeImageSerializer(serializers.ModelSerializer):

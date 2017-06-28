@@ -18,6 +18,7 @@ class Subtype(models.Model):
 
 class Style(models.Model):
     name = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
     description = models.TextField()
     subtypes = models.ManyToManyField(Subtype)
 

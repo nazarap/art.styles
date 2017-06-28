@@ -219,6 +219,24 @@ class StyleViewSet(viewsets.ModelViewSet):
         except ObjectDoesNotExist:
             return Response({"style": {}}, status=status.HTTP_400_BAD_REQUEST)
 
+    # Get all Styles
+    def get_style_by_link(self, request, style_link):
+
+        try:
+            style = Style.objects.get(link=style_link)
+
+            serializer_context = {
+                'request': Request(request),
+            }
+            serializer = StyleSerializer([style], many=True, context=serializer_context)
+            serializer.data[0]['images'] = StyleImage.objects.filter(style_id=style.id).values_list('image', flat=True)
+
+            # Return Styles data
+            return Response({'style': serializer.data[0]})
+
+        except ObjectDoesNotExist:
+            return Response({"style": {}}, status=status.HTTP_400_BAD_REQUEST)
+
 
     # Create new Styles
     def create_new_style(self, request):
@@ -226,12 +244,14 @@ class StyleViewSet(viewsets.ModelViewSet):
         request_data = json.loads(request.body)
         subtypes_list = request_data.get('subtypes_list')
         images_list = request_data.get('images_list')
+        name = name=request_data.get('name')
+        link = name.replace(" ", "_")
 
         try:
             serializer_context = {
                 'request': Request(request),
             }
-            style = Style.objects.create(name=request_data.get('name'), description=request_data.get('description'))
+            style = Style.objects.create(name=name, link=link, description=request_data.get('description'))
             style.subtypes = subtypes_list
             style.save()
 
