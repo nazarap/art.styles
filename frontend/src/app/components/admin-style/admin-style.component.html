@@ -25,10 +25,9 @@
         <div class="image" *ngFor="let image of imagesList; let $index = index" (click)="removeImage($index)">
             <img src="{{ image }}">
         </div>
+        <app-tinymce [elementId]="'style-description'" (onEditorKeyup)="keyupHandlerFunction($event)"></app-tinymce>
 
-        <textarea placeholder="Description" [(ngModel)]="styleDescription"></textarea>
-
-        <a class="btn btn-info" (click)="openPopup()">Добавити особливість</a>
+        <a class="btn btn-info margin-btn" (click)="openPopup()">Добавити особливість</a>
 
     </div>
 
@@ -36,7 +35,7 @@
         <div class="card">
 
             <div class="view overlay hm-white-slight">
-                <img src="{{ subtype.images[0] }}" class="img-fluid" alt="{{ subtype.name }}">
+                <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}">
                 <a>
                     <div class="mask"></div>
                 </a>
@@ -56,5 +55,6 @@
     </div>
 
 </div>
+
 <!--/.First row-->
 <app-type-modal></app-type-modal>

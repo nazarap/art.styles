@@ -18,6 +18,7 @@ import { SearchBlockComponent } from './components/search-block/search-block.com
 import { SearchContentComponent } from './components/search-content/search-content.component';
 import { StylePageComponent } from './components/style-page/style-page.component';
 import { TypeModalComponent } from './components/type-modal/type-modal.component';
+import { TinyComponent } from './tiny.component';
 import {TruncatePipe} from './filters/truncate';
 
 @NgModule({
@@ -36,7 +37,8 @@ import {TruncatePipe} from './filters/truncate';
     SearchContentComponent,
     StylePageComponent,
     TypeModalComponent,
-    TruncatePipe
+    TruncatePipe,
+    TinyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'art.style'}),

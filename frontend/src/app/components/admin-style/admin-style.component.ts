@@ -4,6 +4,7 @@ import { SubtypeService } from './../../services/subtype.service'
 import { StyleService } from './../../services/style.service'
 import Subtype from './../../domain/Subtype';
 import { Router } from '@angular/router';
+import ImageAbstract from './../../domain/ImageAbstract';
 
 @Component({
   selector: 'app-admin-style',
@@ -65,6 +66,12 @@ export class AdminStyleComponent implements OnInit {
       )
   }
 
+  keyupHandlerFunction(newText): void {
+      this.styleDescription = newText;
+  }
+
   ngOnInit() { }
+
+  imageUrl (imageUrl: string): string { return ImageAbstract.getCImage(imageUrl); }
 
 }
