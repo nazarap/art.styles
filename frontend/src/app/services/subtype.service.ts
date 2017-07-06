@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import Subtype from './../domain/Subtype';
 import { Http, Response, Headers } from '@angular/http';
+import { IMAGES_URL } from '../app.config';
 
 @Injectable()
 export class SubtypeService {
@@ -16,13 +17,13 @@ export class SubtypeService {
 
     getSubtypes(typeID): any {
         return this.http
-               .get(`http://localhost:8000/api/subtypes/${typeID}/`, { headers: this.headers })
+               .get(`${IMAGES_URL}api/subtypes/${typeID}/`, { headers: this.headers })
                .map(res => res.json());
     }
 
     getSubtypesById(idsList): any {
         return this.http
-               .post(`http://localhost:8000/api/subtypes/`, {ids_list: idsList}, { headers: this.headers })
+               .post(`${IMAGES_URL}api/subtypes/`, {ids_list: idsList}, { headers: this.headers })
                .map(res => res.json());
     }
 
@@ -40,7 +41,7 @@ export class SubtypeService {
 
     createSubtype(name: string, description: string, typeID: number, imagesList: Array<String>): any {
         return this.http
-           .post(`http://localhost:8000/api/subtype/create/`, {name: name, description: description, type_id: typeID, images_list: imagesList}, { headers: this.headers })
+           .post(`${IMAGES_URL}api/subtype/create/`, {name: name, description: description, type_id: typeID, images_list: imagesList}, { headers: this.headers })
            .map(res => res.json());
     }
 }

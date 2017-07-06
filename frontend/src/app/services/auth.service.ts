@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Http, Response, Headers } from '@angular/http';
+import { IMAGES_URL } from '../app.config';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +15,7 @@ export class AuthService {
 
     login(login: string, password: string): any {
         return this.http
-           .post(`http://localhost:8000/api/user/login/`, {login: login, password: password}, { headers: this.headers })
+           .post(`${IMAGES_URL}api/user/login/`, {login: login, password: password}, { headers: this.headers })
            .map(res => res.json());
     }
 }

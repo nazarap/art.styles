@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import Type from './../domain/Type';
 import { Http, Response, Headers } from '@angular/http';
+import { IMAGES_URL } from '../app.config';
 
 @Injectable()
 export class TypeService {
@@ -15,7 +16,7 @@ export class TypeService {
 
     getTypes(): any {
         return this.http
-               .get(`http://localhost:8000/api/types/`, { headers: this.headers })
+               .get(`${IMAGES_URL}api/types/`, { headers: this.headers })
                .map(res => res.json());
     }
 
@@ -29,7 +30,7 @@ export class TypeService {
 
     createType(name: string, description: string): any {
         return this.http
-           .post(`http://localhost:8000/api/type/create/`, {name: name, description: description}, { headers: this.headers })
+           .post(`${IMAGES_URL}api/type/create/`, {name: name, description: description}, { headers: this.headers })
            .map(res => res.json());
     }
 }

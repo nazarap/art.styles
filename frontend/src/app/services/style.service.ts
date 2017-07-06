@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import Style from './../domain/Style';
 import Subtype from './../domain/Subtype';
 import { Http, Response, Headers } from '@angular/http';
+import { IMAGES_URL } from '../app.config';
 
 @Injectable()
 export class StyleService {
@@ -18,31 +19,31 @@ export class StyleService {
 
     getStyles(): any {
         return this.http
-               .get(`http://localhost:8000/api/styles/`, { headers: this.headers })
+               .get(`${IMAGES_URL}api/styles/`, { headers: this.headers })
                .map(res => res.json());
     }
 
     getStyleById(styleId): any {
         return this.http
-               .get(`http://localhost:8000/api/style/${styleId}/` , { headers: this.headers })
+               .get(`${IMAGES_URL}api/style/${styleId}/` , { headers: this.headers })
                .map(res => res.json());
     }
 
     getStyleByLink(styleLink): any {
         return this.http
-               .get(`http://localhost:8000/api/style/link/${styleLink}/` , { headers: this.headers })
+               .get(`${IMAGES_URL}api/style/link/${styleLink}/` , { headers: this.headers })
                .map(res => res.json());
     }
 
     searchStyles(searchKey): any {
         return this.http
-               .post(`http://localhost:8000/api/styles/search/`, {search_key: searchKey}, { headers: this.headers })
+               .post(`${IMAGES_URL}api/styles/search/`, {search_key: searchKey}, { headers: this.headers })
                .map(res => res.json());
     }
 
     search(subtypesList): any {
         this.http
-           .post(`http://localhost:8000/api/styles/filter/`, {subtypes_list: subtypesList}, { headers: this.headers })
+           .post(`${IMAGES_URL}api/styles/filter/`, {subtypes_list: subtypesList}, { headers: this.headers })
            .map(res => res.json())
            .subscribe(
                data => {this.searchStyleList = data.styles as Style[]},
@@ -57,7 +58,7 @@ export class StyleService {
 
     createStyle(name: string, description: string, subtypesList: Array<number>, imagesList: Array<String>): any {
         return this.http
-           .post(`http://localhost:8000/api/style/create/`, {name: name, description: description, subtypes_list: subtypesList, images_list: imagesList}, { headers: this.headers })
+           .post(`${IMAGES_URL}api/style/create/`, {name: name, description: description, subtypes_list: subtypesList, images_list: imagesList}, { headers: this.headers })
            .map(res => res.json());
     }
 }
