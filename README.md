@@ -1,7 +1,10 @@
-Archistyl [Architectural styles]
+ARTstyle [Architectural styles]
 =====================================================
 
 This service is for architects or people interested in architecture, where you can find information on the style of architecture for its features
+
+![Presentation image](http://dl4.joxi.net/drive/2017/07/10/0012/1303/812311/11/7ce5455dfd.jpg)
+![Presentation image](http://dl4.joxi.net/drive/2017/07/10/0012/1303/812311/11/37c0e23899.jpg)
 
 TECHNOLOGY ON PROJECT
 ------------------------
@@ -32,10 +35,10 @@ PROJECT STRUCTURE
       README                          this file
 
 
-INSTALLATION
-------------------------
+# INSTALLATION
 
-BACK-END PATH
+BACK-END SIDE
+------------------------
 
 Install Django
 ```sh
@@ -64,19 +67,9 @@ $ pip install --upgrade pip
 $ pip install django-cors-headers
 $ pip install djangorestframework
 $ pip install flask
+$ pip install Pillow
 ```
-```sh
-$ pip install vk
-```
-if your have error:
-    "DEPRECATION: Uninstalling a distutils installed project (requests) has been deprecated and will be removed 
-    in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall 
-    the project."
-    
-Run this command
-```sh
-$ pip install --ignore-installed vk
-```    
+
 Run server
 ```sh
 $ python manage.py runserver
@@ -86,3 +79,25 @@ Django migrate
 $ python manage.py makemigrations api
 $ python manage.py migrate
 ```
+Django create superuser
+```sh
+$ python manage.py createsuperuser --username=joe --email=joe@example.com
+```
+
+
+FRONT-END SIDE
+------------------------
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.

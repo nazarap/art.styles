@@ -1,0 +1,60 @@
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Виберіть основні особливості стилю
+            <!--Search results by your features-->
+            <small class="text-muted"></small>
+        </h1>
+        <p style="color: #707070;">Виберіть основні особливості стилю який ви шукаєте. Скористайтесь кнопкою "Добавити Особливість" для
+                        знаходження і добавлення особливостей для пошуку стилю. Використовуйте кнопку "Пошук" щоб запустити пошук.</p>
+        <!--Please select the main features of the style that you are looking for. Use the "Add Feature" button-->
+            <!--for finding and adding features styilyu search. Use the "Search" button to launch style search.-->
+    </div>
+</div>
+<!--/.Page heading-->
+<hr>
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <!--First column-->
+    <div class="col-lg-3 wow fadeIn" *ngFor="let subtype of getSelectedList()">
+        <!--Card-->
+        <div class="card">
+
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+                <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}" title="{{ subtype.name }}">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">{{ subtype.name }}</h4>
+                <!--Text-->
+                <div class="read-more btn-many">
+                    <a class="btn btn-info" *ngIf="false"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" *ngIf="false"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" (click)="removeSelectedSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <!--/.Card content-->
+
+        </div>
+        <!--/.Card-->
+    </div>
+    <h1 class="empty-list" *ngIf="!getSelectedList().length">Список особливостей</h1>
+    <!--/.First column-->
+</div>
+<!--/.First row-->
+
+<a class="btn btn-info" (click)="openPopup()">Добавити Особливість</a>
+
+<app-type-modal></app-type-modal>
+
+<a class="btn btn-info" (click)="search()">Пошук</a>
+
+<br><br><br>

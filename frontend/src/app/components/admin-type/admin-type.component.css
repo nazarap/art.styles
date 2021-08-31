@@ -1,0 +1,67 @@
+.create-type {
+    margin: 45px 0 45px 0;
+}
+
+.create-type input.name, .create-type textarea {
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    margin: 0 0 30px 0;
+    font-size: 25px;
+    font-family: inherit;
+}
+
+.create-type textarea {
+    font-size: 20px;
+    height: 150px;
+}
+
+.create-type .image {
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    height: 140px !important;
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+.create-type .image:hover {
+    opacity: 0.7;
+}
+
+.create-type .image img {
+    height: 100%;
+}
+
+
+.image-upload {
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+.image-upload input {
+    cursor: pointer;
+    display: block !important;
+    width: 140px !important;
+    height: 140px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    position: absolute;
+    margin-top: -95px;
+}
+
+.btn {
+    margin: 0;
+}
+
+div.image-upload i.fa {
+    font-size: 50px;
+    color: #bfbfbf;
+    margin-top: 45px;
+    margin-left: 45px;
+}

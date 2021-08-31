@@ -1,0 +1,51 @@
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Знайдені результати по вибраним особливостям
+            <!--Search results by your features-->
+            <small class="text-muted"></small>
+        </h1>
+        <p style="color: #707070;">Тут ви можете побачити всі стилі, які відповідають вибраним вище особливостям.
+             Якщо список не оновлено, скористайтеся кнопкою "Пошук", розташованою вище.</p>
+        <!--Here you can see all the styles that match the features that you selected above.-->
+            <!--If the list is not updated, use the "Search" button, located above.-->
+    </div>
+</div>
+<!--/.Page heading-->
+<hr>
+
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <!--First column-->
+    <div class="col-lg-6 one-card wow fadeIn" *ngFor="let style of getSearchStyleList()">
+        <!--Card-->
+        <div class="card style-card">
+
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+                <img src="{{ imageUrl(style.images[0]) }}" class="img-fluid" alt="{{ style.name }}" title="{{ style.name }}">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">{{ style.name }}</h4>
+                <div class="read-more">
+                    <a class="btn btn-info" routerLink="/style/{{style.link}}">Детальніше</a>
+                </div>
+            </div>
+            <!--/.Card content-->
+
+        </div>
+        <!--/.Card-->
+    </div>
+    <h1 class="empty-list" *ngIf="getSearchStyleList() && getSearchStyleList().length == 0">Вибачте, не знайдено жодного результату по вашому запиту.</h1>
+    <!--Sorry, No results found for your query.-->
+    <h1 class="empty-list" *ngIf="!getSearchStyleList()">Список стилів {{ getSearchStyleList() }}</h1>
+    <!--/.First column-->
+</div>
+
+<hr>

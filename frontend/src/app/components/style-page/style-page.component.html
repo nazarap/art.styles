@@ -1,0 +1,47 @@
+<div class="container">
+    <!--Page heading-->
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-md-12">
+            <h1 class="h1-responsive">{{ style.name }}
+                <small class="text-muted"></small>
+            </h1>
+            <p style="color: #707070;" [innerHTML]="style.description"></p>
+        </div>
+    </div>
+    <!--/.Page heading-->
+
+    <!--First row-->
+    <div class="content-style row wow fadeIn" data-wow-delay="0.2s">
+        <div class="wow fadeIn">
+            <div *ngFor="let image of style.images" class="image"(click)="imagePopup(image)">
+                <img src="{{ imageUrl(image) }}" alt="{{ style.name }}" title="{{ style.name }}">
+            </div>
+        </div>
+    </div>
+    <h2>Цей стиль має такі особливості</h2>
+    <div class="subtypes-list">
+        <div class="col-lg-3 wow fadeIn" *ngFor="let subtype of subtypeList">
+            <div class="card">
+
+                <div class="view overlay hm-white-slight">
+                    <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}" title="{{ subtype.name }}">
+                    <a>
+                        <div class="mask"></div>
+                    </a>
+                </div>
+
+                <div class="card-block">
+                    <h4 class="card-title">{{ subtype.name }}</h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="imageURL">
+    <div class="popup-background"></div>
+    <div class="setting-popup" [ngStyle]="{'background-image': 'url(' + imageUrl(imageURL) + ')'}">
+        <a class="btn btn-info btn-times" (click)="imagePopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+</div>

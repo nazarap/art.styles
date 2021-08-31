@@ -1,0 +1,92 @@
+<div *ngIf="isOpen()">
+    <div class="popup-background"></div>
+    <div class="setting-popup">
+        <div class="popup-header">
+            <h2 class="feature">Виберіть особливість</h2>
+
+            <!--<input>-->
+            <!--<a class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></a>-->
+
+            <a class="btn btn-info btn-times" (click)="closePopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+        <div class="popup-content row">
+
+            <div class="col-lg-3 one-card" *ngFor="let type of typeList">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="{{ imageUrl(type.images[0]) }}" class="img-fluid" alt="{{ type.name }}" title="{{ type.name }}">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">{{ type.name }}</h4>
+                        <!--Text-->
+                        <div class="read-more btn-many">
+                            <a *ngIf="false" class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                            <a class="btn btn-info" (click)="subPopup(type.id)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+        </div>
+
+
+        <div *ngIf="isOpenSubPopup">
+            <div class="popup-background" style="background: rgba(26, 26, 26, 0.39);"></div>
+            <div class="setting-popup" style="position: absolute">
+                <div class="popup-header">
+                    <h2>Виберіть особливість</h2>
+                    <!--<h3>or</h3>-->
+
+                    <!--<a class="btn btn-info" style='margin-top: -6px; margin-left: 20px;font-size: 14px;font-weight: 900;padding-bottom: 9px;'>-->
+                        <!--<i class="fa fa-plus" aria-hidden="true" style="margin-right: 5px;"></i> Add all</a>-->
+
+                    <a class="btn btn-info btn-times" style="margin-top: 0px;" (click)="subPopup()"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+                <div class="popup-content row">
+                    <div class="col-lg-4 one-card" *ngFor="let subtype of subtypeList">
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}" title="{{ subtype.name }}">
+                                <a>
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <h4 class="card-title">{{ subtype.name }}</h4>
+                                <!--Text-->
+                                <div class="read-more btn-many">
+                                    <a *ngIf="false" class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                                    <a *ngIf="!getSelectedList()[subtype.id]" class="btn btn-info" (click)="addSubtype(subtype)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <a *ngIf="getSelectedList()[subtype.id]" class="btn btn-info btn-add" style="background-color: #8ab599 !important;"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

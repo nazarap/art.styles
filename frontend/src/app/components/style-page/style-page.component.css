@@ -1,0 +1,68 @@
+.image {
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    height: 240px !important;
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+.image:hover {
+    opacity: 0.7;
+}
+
+.image img {
+    height: 100%;
+}
+
+.row.content-style {
+    margin-top: 50px;
+    margin-left: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+h2 {
+    margin-top: 50px
+}
+
+.subtypes-list {
+    display: flex;
+    margin: 50px 0;
+}
+
+
+
+
+/*Settings popup styles*/
+
+.popup-background {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(26,26,26,.7);
+    z-index: 1040;
+}
+
+.setting-popup {
+    position: fixed;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.btn-info {
+    background: inherit;
+    float: right;
+}
+
+.btn-info:hover {
+    background: #82aa90;
+    float: right;
+}

@@ -1,0 +1,38 @@
+.navbar {
+  font-weight: 300;
+}
+
+.navbar.navbar-light .nav-item a {
+    color: white;
+    transition: .35s;
+}
+.navbar.navbar-light .breadcrumb a:hover,
+.navbar.navbar-light .nav-item a:hover {
+  transition: .35s;
+  color: white;
+}
+.navbar.navbar-light .breadcrumb.active,
+.navbar.navbar-light .nav-item a.active {
+    background-color: hsla(140.6, 12.6%, 50.2%, 0.3);
+}
+
+.navbar {
+    background-color: #8ab599;
+    font-weight: 400;
+    padding: 15px 0;
+    box-shadow: none;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .open > .nav-link {
+    color: white;
+}
+
+.navbar .navbar-brand {
+    font-size: 25px;
+    color: white;
+}
+
+.navbar .navbar-brand:hover {
+    color: white;
+}

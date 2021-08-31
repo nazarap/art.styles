@@ -1,0 +1,30 @@
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Авторизація
+            <small class="text-muted"></small>
+        </h1>
+        <p style="color: #707070;">Ця сторінка для адміністраторів сайту. Ви повинні авторизуватися щоб мати можливість змінювати інфомацію на сайті.</p>
+        <!--This page is for administrators of the site. You need to log in for the ability to edit the information on the site.-->
+    </div>
+</div>
+<!--/.Page heading-->
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="login-block">
+
+        <input placeholder="Login" [(ngModel)]="login">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+
+        <button (click)="loginListener()">Login</button>
+        <p class="error-message" *ngIf="showErrorMessage">
+            Логін або пароль недійсний. Перевірте дані доступу.
+            Ця сторона сайту доступна лише для наших дивовижних адміністраторів.
+            Якщо ви не адміністратор цього сайту, закрийте цю сторінку.</p>
+            <!--Login or password is invalid. Please check your access data.-->
+            <!--This site side is only for our amazing administrators.-->
+            <!--If you aren't admin this site, please close this page.-->
+    </div>
+</div>
+<!--/.First row-->

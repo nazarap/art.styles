@@ -1,0 +1,29 @@
+{
+  "name": "art.style",
+  "version": "1.0.0",
+  "description": "This service is for architects or people interested in architecture, where you can find information on the style of architecture for its features ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazarap/archistyl.git"
+  },
+  "keywords": [
+    "python",
+    "django",
+    "angular2",
+    "architecture",
+    "material-design"
+  ],
+  "author": "Nazar Oryschuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazarap/archistyl/issues"
+  },
+  "homepage": "https://github.com/nazarap/archistyl#readme",
+  "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6"
+  }
+}

@@ -1,0 +1,60 @@
+<app-admin-bar></app-admin-bar>
+<!--Page heading-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-md-12">
+        <h1 class="h1-responsive">Створити Стиль
+            <small class="text-muted"></small>
+            <button class="btn btn-info" style="float: right; cursor: pointer" (click)="createStyle()">Створити</button>
+        </h1>
+        <p style="color: #707070;">Тут ви можете створити новий Стиль.</p>
+        <!--Here you can create new style-->
+    </div>
+</div>
+<!--/.Page heading-->
+
+<!--First row-->
+<div class="row wow fadeIn" data-wow-delay="0.2s">
+
+    <div class="col-lg-12 wow fadeIn create-style">
+        <input placeholder="Style`s name" class="name" [(ngModel)]="styleName">
+        <div class="image-upload">
+            <i class="fa fa-camera-retro" aria-hidden="true"></i>
+            <input type="file" accept="image/*" (change)="imageUpload($event)"/>
+        </div>
+
+        <div class="image" *ngFor="let image of imagesList; let $index = index" (click)="removeImage($index)">
+            <img src="{{ image }}">
+        </div>
+        <app-tinymce [elementId]="'style-description'" (onEditorKeyup)="keyupHandlerFunction($event)"></app-tinymce>
+
+        <a class="btn btn-info margin-btn" (click)="openPopup()">Добавити особливість</a>
+
+    </div>
+
+    <div class="col-lg-3 wow fadeIn" *ngFor="let subtype of getSubtypeList()">
+        <div class="card">
+
+            <div class="view overlay hm-white-slight">
+                <img src="{{ imageUrl(subtype.images[0]) }}" class="img-fluid" alt="{{ subtype.name }}">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+
+            <div class="card-block">
+                <h4 class="card-title">{{ subtype.name }}</h4>
+
+                <div class="read-more btn-many">
+                    <a class="btn btn-info"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" (click)="removeSubtype(subtype.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--/.First row-->
+<app-type-modal></app-type-modal>

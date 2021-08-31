@@ -1,0 +1,18 @@
+.presentation {
+    background: #8ab599;
+    margin: -50px 0 50px 0;
+}
+
+.presentation > img {
+    width: 30%;
+    margin-left: 35%;
+    cursor: pointer;
+    position: relative;
+}
+
+.presentation > img.nodisplay:hover {
+    width: 32%;
+    margin-top: -11px;
+    margin-left: 34%;
+    z-index: 999;
+}
